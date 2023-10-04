@@ -27,7 +27,8 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('/admin/dashboard') ? ' active' : '' }}" href="/admin/dashboard">
+                    <a class="nav-main-link{{ request()->is('/admin/dashboard') ? ' active' : '' }}"
+                        href="/admin/dashboard">
                         <i class="nav-main-link-icon fa fa-chart-line"></i>
                         <span class="nav-main-link-name">Dashboard</span>
 
@@ -75,7 +76,8 @@
                     </a>
                 </li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link" href="{{route('users.index')}}">
+                    <a class="nav-main-link"{{ request()->is('/users-index') ? ' active' : '' }}"
+                        href="{{ route('users.index') }}">
                         <i class="nav-main-link-icon fa fa-user-group"></i>
                         <span class="nav-main-link-name">Administración de Usuarios</span>
                     </a>
