@@ -6,7 +6,7 @@
                     Pers<span class="opacity-75">onal</span>
                 </span>
                 <span class="smini-hidden">
-                    Subdirección d<span class="opacity-75">e Personal</span>
+                    APP<span class="opacity-75"> MONTT</span>
                 </span>
             </a>
             <div>

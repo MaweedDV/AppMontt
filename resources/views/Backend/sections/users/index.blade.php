@@ -5,7 +5,7 @@
         <div class="content content-full">
             <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
                 <div>
-                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Usuarios</h1>
+                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Administracion de usuarios</h1>
                 </div>
                 <nav class="flex-shrink-0 my-2 my-sm-0 ms-sm-3" aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -22,9 +22,12 @@
         </div>
     </div>
     <div class="content">
-        <div class="col-md-12 col-xl-12">
-            {{ $dataTable->table() }}
+        <div class="block block-rounded">
+            <div class="block-content block-content-full col-md-12 col-xl-12">
+                {{ $dataTable->table() }}
+            </div>
         </div>
+
 
     </div>
 @endsection
