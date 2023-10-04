@@ -29,7 +29,7 @@ class LoginController extends Controller
 
     public function authenticated(Request $request, $user)
     {
-       $routes = ['admin' => 'users', 'customer' => 'home'];
+       $routes = ['admin' => 'dashboard', 'customer' => 'home'];
 
        return to_route($routes[$user->role]);
     }
