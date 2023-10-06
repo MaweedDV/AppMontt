@@ -18,16 +18,17 @@
            <div class=col-md-8>
             <div class="block block-rounded">
               <div class="block-content align-items-sm-center">
+                {{-- cambiar la ruta para la insercion de datos en funcion store de conrolador tabla formulario srf--}}
                 <form class="row g-3" method="POST" action="{{route('users.store')}}" enctype="multipart/form-data">
                     @csrf
 
                       <div class="col-md-6">
                         <label for="lblFecha" class="form-label">1. Fecha de Atención:</label>
-                        <input type="date" class="form-control" id="txtFecha" name="txtFecha">
+                        <input type="date" class="form-control" id="date_attention" name="date_attention">
                       </div>
                       <div class="col-md-6">
                         <label for="lblPlace" class="form-label">2. ¿Cual es su calidad Jurídica?</label>
-                        <select class="form-select" id="txtPlace" name="txtPlace">
+                        <select class="form-select" id="juridic_quality" name="juridic_quality">
                           <option selected="">Seleccione una opción</option>
                           <option value="Planta">Planta</option>
                           <option value="Contrata">Contrata</option>
@@ -39,7 +40,7 @@
                       </div>
                       <div class="col-md-6">
                         <label for="lblPlace" class="form-label">3. ¿Cual es su Escalafón?</label>
-                        <select class="form-select" id="txtPlace" name="txtPlace">
+                        <select class="form-select" id="escale" name="escale">
                           <option selected="">Seleccione una opción</option>
                           <option value="Directivo">Directivo</option>
                           <option value="Profesional">Profesional</option>
@@ -52,7 +53,7 @@
                       </div>
                       <div class="col-md-6">
                         <label for="lblPlace" class="form-label">4. Indique su rango de edad</label>
-                        <select class="form-select" id="txtPlace" name="txtPlace">
+                        <select class="form-select" id="age_range" name="age_range">
                           <option selected="">Seleccione una opción</option>
                           <option value="Entre 18 y 25 años">Entre 18 y 25 años</option>
                           <option value="Entre 26 y 30 años">Entre 26 y 30 años</option>
@@ -68,7 +69,7 @@
                       </div>
                       <div class="col-md-6">
                         <label for="lblPlace" class="form-label">5. Sexo</label>
-                        <select class="form-select" id="txtPlace" name="txtPlace">
+                        <select class="form-select" id="genre" name="genre">
                           <option selected="">Seleccione una opción</option>
                           <option value="Femenino">Femenino</option>
                           <option value="Masculino">Masculino</option>
@@ -77,7 +78,7 @@
                       </div>
                       <div class="col-md-6">
                         <label for="lblPlace" class="form-label">6. Antigüedad en el Municipio</label>
-                        <select class="form-select" id="txtPlace" name="txtPlace">
+                        <select class="form-select" id="years_antiquity" name="years_antiquity">
                           <option selected="">Seleccione una opción</option>
                           <option value="Menor a 1 año">Menor a 1 año</option>
                           <option value="Entre 1 y 5 años">Entre 1 y 5 años</option>
@@ -89,7 +90,7 @@
                       </div>
                       <div class="col-md-6">
                         <label for="lblPlace" class="form-label">7. ¿En que dirección (Unidad) trabaja?</label>
-                        <select class="form-select" id="txtPlace" name="txtPlace">
+                        <select class="form-select" id="place_job" name="place_job">
                           <option selected="">Seleccione una opción</option>
                           <option value="Administración Municipal">Administración Municipal (incluye Oirs, Licitaciones)</option>
                           <option value="Alcaldía">Alcaldía</option>
@@ -128,7 +129,7 @@
                 </div>
                 <div class="col-md-12">
                     <label for="lblPlace" class="form-label">8. A que área del Departamnto de Personal asistió:</label>
-                    <select class="form-select" id="txtPlace" name="txtPlace">
+                    <select class="form-select" id="a8" name="a8">
                       <option selected="">Seleccione una opción</option>
                       <option value="Asistencia - Reloj Control">Asistencia - Reloj Control</option>
                       <option value="Capacitacion">Capacitacion</option>
@@ -150,7 +151,7 @@
                 <div class="col-md-12">
                     <BR>
                     <label for="lblPlace" class="form-label">9. En relación con la pregunta anterior, podría indicarnos ¿qué trámite en especifico realizó?:</label>
-                    <textarea class="form-control" id="example-textarea-floating" name="example-textarea-floating" style="height: 50px" placeholder="Escriba aquí"></textarea>
+                    <textarea class="form-control" id="a9" name="a9" style="height: 50px" placeholder="Escriba aquí"></textarea>
                     <br>
                 </div>
                 <div class="col-mb-12">
@@ -163,30 +164,30 @@
                         <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
                       <div class="form-check form-check-inline">
                         <label class="form-check-label" for="example-radios-inline1">1</label>
-                        <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+                        <input class="form-check-input" type="radio" id="a10" name="a10" value="1" >
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+                        <input class="form-check-input" type="radio" id="a10" name="a10" value="2" >
                         <label class="form-check-label" for="example-radios-inline2">2</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+                        <input class="form-check-input" type="radio" id="a10" name="a10" value="3" >
                         <label class="form-check-label" for="example-radios-inline1">3</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+                        <input class="form-check-input" type="radio" id="a10" name="a10" value="4" >
                         <label class="form-check-label" for="example-radios-inline2">4</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+                        <input class="form-check-input" type="radio" id="a10" name="a10" value="5" >
                         <label class="form-check-label" for="example-radios-inline1">5</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                        <input class="form-check-input" type="radio" id="a10" name="a10" value="6" >
                         <label class="form-check-label" for="example-radios-inline2">6</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                        <input class="form-check-input" type="radio" id="a10" name="a10" value="7" >
                         <label class="form-check-label" for="example-radios-inline2">7</label>
                       </div>
                       <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -204,30 +205,30 @@
                       <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
                     <div class="form-check form-check-inline">
                       <label class="form-check-label" for="example-radios-inline1">1</label>
-                      <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+                      <input class="form-check-input" type="radio" id="a11" name="a11" value="1" >
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+                      <input class="form-check-input" type="radio" id="a11" name="a11" value="2" >
                       <label class="form-check-label" for="example-radios-inline2">2</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+                      <input class="form-check-input" type="radio" id="a11" name="a11" value="3" >
                       <label class="form-check-label" for="example-radios-inline1">3</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+                      <input class="form-check-input" type="radio" id="a11" name="a11" value="4" >
                       <label class="form-check-label" for="example-radios-inline2">4</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+                      <input class="form-check-input" type="radio" id="a11" name="a11" value="5" >
                       <label class="form-check-label" for="example-radios-inline1">5</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                      <input class="form-check-input" type="radio" id="a11" name="a11" value="6" >
                       <label class="form-check-label" for="example-radios-inline2">6</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                      <input class="form-check-input" type="radio" id="a11" name="a11" value="7" >
                       <label class="form-check-label" for="example-radios-inline2">7</label>
                     </div>
                     <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -245,30 +246,30 @@
                     <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
                   <div class="form-check form-check-inline">
                     <label class="form-check-label" for="example-radios-inline1">1</label>
-                    <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+                    <input class="form-check-input" type="radio" id="a12" name="a12" value="1" >
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+                    <input class="form-check-input" type="radio" id="a12" name="a12" value="2" >
                     <label class="form-check-label" for="example-radios-inline2">2</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+                    <input class="form-check-input" type="radio" id="a12" name="a12" value="3" >
                     <label class="form-check-label" for="example-radios-inline1">3</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+                    <input class="form-check-input" type="radio" id="a12" name="a12" value="4" >
                     <label class="form-check-label" for="example-radios-inline2">4</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+                    <input class="form-check-input" type="radio" id="a12" name="a12" value="5" >
                     <label class="form-check-label" for="example-radios-inline1">5</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                    <input class="form-check-input" type="radio" id="a12" name="a12" value="6" >
                     <label class="form-check-label" for="example-radios-inline2">6</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                    <input class="form-check-input" type="radio" id="a12" name="a12" value="7" >
                     <label class="form-check-label" for="example-radios-inline2">7</label>
                   </div>
                   <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -286,30 +287,30 @@
                   <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label" for="example-radios-inline1">1</label>
-                  <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+                  <input class="form-check-input" type="radio" id="a13" name="a13" value="1" >
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+                  <input class="form-check-input" type="radio" id="a13" name="a13" value="2" >
                   <label class="form-check-label" for="example-radios-inline2">2</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+                  <input class="form-check-input" type="radio" id="a13" name="a13" value="3" >
                   <label class="form-check-label" for="example-radios-inline1">3</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+                  <input class="form-check-input" type="radio" id="a13" name="a13" value="4" >
                   <label class="form-check-label" for="example-radios-inline2">4</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+                  <input class="form-check-input" type="radio" id="a13" name="a13" value="5" >
                   <label class="form-check-label" for="example-radios-inline1">5</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                  <input class="form-check-input" type="radio" id="a13" name="a13" value="6" >
                   <label class="form-check-label" for="example-radios-inline2">6</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                  <input class="form-check-input" type="radio" id="a13" name="a13" value="7" >
                   <label class="form-check-label" for="example-radios-inline2">7</label>
                 </div>
                 <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -327,30 +328,30 @@
                 <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
               <div class="form-check form-check-inline">
                 <label class="form-check-label" for="example-radios-inline1">1</label>
-                <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+                <input class="form-check-input" type="radio" id="a14" name="a14" value="1" >
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+                <input class="form-check-input" type="radio" id="a14" name="a14" value="2" >
                 <label class="form-check-label" for="example-radios-inline2">2</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+                <input class="form-check-input" type="radio" id="a14" name="a14" value="3" >
                 <label class="form-check-label" for="example-radios-inline1">3</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+                <input class="form-check-input" type="radio" id="a14" name="a14" value="4" >
                 <label class="form-check-label" for="example-radios-inline2">4</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+                <input class="form-check-input" type="radio" id="a14" name="a14" value="5" >
                 <label class="form-check-label" for="example-radios-inline1">5</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                <input class="form-check-input" type="radio" id="a14" name="a14" value="6" >
                 <label class="form-check-label" for="example-radios-inline2">6</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                <input class="form-check-input" type="radio" id="a14" name="a14" value="7" >
                 <label class="form-check-label" for="example-radios-inline2">7</label>
               </div>
               <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -368,30 +369,30 @@
               <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
             <div class="form-check form-check-inline">
               <label class="form-check-label" for="example-radios-inline1">1</label>
-              <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+              <input class="form-check-input" type="radio" id="a15" name="a15" value="1" >
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+              <input class="form-check-input" type="radio" id="a15" name="a15" value="2" >
               <label class="form-check-label" for="example-radios-inline2">2</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+              <input class="form-check-input" type="radio" id="a15" name="a15" value="3" >
               <label class="form-check-label" for="example-radios-inline1">3</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+              <input class="form-check-input" type="radio" id="a15" name="a15" value="4" >
               <label class="form-check-label" for="example-radios-inline2">4</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+              <input class="form-check-input" type="radio" id="a15" name="a15" value="5" >
               <label class="form-check-label" for="example-radios-inline1">5</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+              <input class="form-check-input" type="radio" id="a15" name="a15" value="6" >
               <label class="form-check-label" for="example-radios-inline2">6</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+              <input class="form-check-input" type="radio" id="a15" name="a15" value="7" >
               <label class="form-check-label" for="example-radios-inline2">7</label>
             </div>
             <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -409,30 +410,30 @@
                   <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label" for="example-radios-inline1">1</label>
-                  <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+                  <input class="form-check-input" type="radio" id="a16" name="a16" value="1" >
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+                  <input class="form-check-input" type="radio" id="a16" name="a16" value="2" >
                   <label class="form-check-label" for="example-radios-inline2">2</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+                  <input class="form-check-input" type="radio" id="a16" name="a16" value="3" >
                   <label class="form-check-label" for="example-radios-inline1">3</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+                  <input class="form-check-input" type="radio" id="a16" name="a16" value="4" >
                   <label class="form-check-label" for="example-radios-inline2">4</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+                  <input class="form-check-input" type="radio" id="a16" name="a16" value="5" >
                   <label class="form-check-label" for="example-radios-inline1">5</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                  <input class="form-check-input" type="radio" id="a16" name="a16" value="6" >
                   <label class="form-check-label" for="example-radios-inline2">6</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                  <input class="form-check-input" type="radio" id="a16" name="a16" value="7" >
                   <label class="form-check-label" for="example-radios-inline2">7</label>
                 </div>
                 <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -450,30 +451,30 @@
                 <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
               <div class="form-check form-check-inline">
                 <label class="form-check-label" for="example-radios-inline1">1</label>
-                <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+                <input class="form-check-input" type="radio" id="a17" name="a17" value="1" >
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+                <input class="form-check-input" type="radio" id="a17" name="a17" value="2" >
                 <label class="form-check-label" for="example-radios-inline2">2</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+                <input class="form-check-input" type="radio" id="a17" name="a17" value="3" >
                 <label class="form-check-label" for="example-radios-inline1">3</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+                <input class="form-check-input" type="radio" id="a17" name="a17" value="4" >
                 <label class="form-check-label" for="example-radios-inline2">4</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+                <input class="form-check-input" type="radio" id="a17" name="a17" value="5" >
                 <label class="form-check-label" for="example-radios-inline1">5</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                <input class="form-check-input" type="radio" id="a17" name="a17" value="6" >
                 <label class="form-check-label" for="example-radios-inline2">6</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+                <input class="form-check-input" type="radio" id="a17" name="a17" value="7" >
                 <label class="form-check-label" for="example-radios-inline2">7</label>
               </div>
               <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -491,30 +492,30 @@
               <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
             <div class="form-check form-check-inline">
               <label class="form-check-label" for="example-radios-inline1">1</label>
-              <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+              <input class="form-check-input" type="radio" id="a18" name="a18" value="1" >
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+              <input class="form-check-input" type="radio" id="a18" name="a18" value="2" >
               <label class="form-check-label" for="example-radios-inline2">2</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+              <input class="form-check-input" type="radio" id="a18" name="a18" value="3" >
               <label class="form-check-label" for="example-radios-inline1">3</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+              <input class="form-check-input" type="radio" id="a18" name="a18" value="4" >
               <label class="form-check-label" for="example-radios-inline2">4</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+              <input class="form-check-input" type="radio" id="a18" name="a18" value="5" >
               <label class="form-check-label" for="example-radios-inline1">5</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+              <input class="form-check-input" type="radio" id="a18" name="a18" value="6" >
               <label class="form-check-label" for="example-radios-inline2">6</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+              <input class="form-check-input" type="radio" id="a18" name="a18" value="7" >
               <label class="form-check-label" for="example-radios-inline2">7</label>
             </div>
             <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -529,11 +530,11 @@
           <div class="space-y-2">
             <br>
             <div class="form-check">
-              <input class="form-check-input" type="radio" id="example-radios-default1" name="example-radios-default" value="option1" checked="">
+              <input class="form-check-input" type="radio" id="a19" name="a19" value="SI" checked="">
               <label class="form-check-label" for="example-radios-default1">SI</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" id="example-radios-default2" name="example-radios-default" value="option2">
+              <input class="form-check-input" type="radio" id="a19" name="a19" value="NO">
               <label class="form-check-label" for="example-radios-default2">NO</label>
             </div>
           </div>
@@ -543,7 +544,7 @@
         <div class="col-md-12">
           <br>
           <label for="lblPlace" class="form-label">20. Si su respuesta anterior fue SI, indique por que motivo se sintió discriminado.</label>
-          <textarea class="form-control" id="example-textarea-floating" name="example-textarea-floating" style="height: 70px" placeholder="Escriba aquí"></textarea>
+          <textarea class="form-control" id="a20" name="a20" style="height: 70px" placeholder="Escriba aquí"></textarea>
           <BR>
       </div>
 
@@ -558,30 +559,30 @@
             <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
           <div class="form-check form-check-inline">
             <label class="form-check-label" for="example-radios-inline1">1</label>
-            <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+            <input class="form-check-input" type="radio" id="a21" name="a21" value="1" >
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+            <input class="form-check-input" type="radio" id="a21" name="a21" value="2" >
             <label class="form-check-label" for="example-radios-inline2">2</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+            <input class="form-check-input" type="radio" id="a21" name="a21" value="3" >
             <label class="form-check-label" for="example-radios-inline1">3</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+            <input class="form-check-input" type="radio" id="a21" name="a21" value="4" >
             <label class="form-check-label" for="example-radios-inline2">4</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+            <input class="form-check-input" type="radio" id="a21" name="a21" value="5" >
             <label class="form-check-label" for="example-radios-inline1">5</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+            <input class="form-check-input" type="radio" id="a21" name="a21" value="6" >
             <label class="form-check-label" for="example-radios-inline2">6</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+            <input class="form-check-input" type="radio" id="a21" name="a21" value="7" >
             <label class="form-check-label" for="example-radios-inline2">7</label>
           </div>
           <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -599,30 +600,30 @@
             <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
           <div class="form-check form-check-inline">
             <label class="form-check-label" for="example-radios-inline1">1</label>
-            <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+            <input class="form-check-input" type="radio" id="a22" name="a22" value="1" >
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+            <input class="form-check-input" type="radio" id="a22" name="a22" value="2" >
             <label class="form-check-label" for="example-radios-inline2">2</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+            <input class="form-check-input" type="radio" id="a22" name="a22" value="3" >
             <label class="form-check-label" for="example-radios-inline1">3</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+            <input class="form-check-input" type="radio" id="a22" name="a22" value="4" >
             <label class="form-check-label" for="example-radios-inline2">4</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+            <input class="form-check-input" type="radio" id="a22" name="a22" value="5" >
             <label class="form-check-label" for="example-radios-inline1">5</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+            <input class="form-check-input" type="radio" id="a22" name="a22" value="6" >
             <label class="form-check-label" for="example-radios-inline2">6</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+            <input class="form-check-input" type="radio" id="a22" name="a22" value="7" >
             <label class="form-check-label" for="example-radios-inline2">7</label>
           </div>
           <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -640,30 +641,30 @@
             <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
           <div class="form-check form-check-inline">
             <label class="form-check-label" for="example-radios-inline1">1</label>
-            <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+            <input class="form-check-input" type="radio" id="a23" name="a23" value="1" >
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+            <input class="form-check-input" type="radio" id="a23" name="a23" value="2" >
             <label class="form-check-label" for="example-radios-inline2">2</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+            <input class="form-check-input" type="radio" id="a23" name="a23" value="3" >
             <label class="form-check-label" for="example-radios-inline1">3</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+            <input class="form-check-input" type="radio" id="a23" name="a23" value="4" >
             <label class="form-check-label" for="example-radios-inline2">4</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+            <input class="form-check-input" type="radio" id="a23" name="a23" value="5" >
             <label class="form-check-label" for="example-radios-inline1">5</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+            <input class="form-check-input" type="radio" id="a23" name="a23" value="6" >
             <label class="form-check-label" for="example-radios-inline2">6</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+            <input class="form-check-input" type="radio" id="a23" name="a23" value="7" >
             <label class="form-check-label" for="example-radios-inline2">7</label>
           </div>
           <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -681,30 +682,30 @@
             <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
           <div class="form-check form-check-inline">
             <label class="form-check-label" for="example-radios-inline1">1</label>
-            <input class="form-check-input" type="radio" id="chkPlanta" name="chkCalidadJuridica" value="Planta" >
+            <input class="form-check-input" type="radio" id="a24" name="a24" value="1" >
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkContrata" name="chkCalidadJuridica" value="Contrata" >
+            <input class="form-check-input" type="radio" id="a24" name="a24" value="2" >
             <label class="form-check-label" for="example-radios-inline2">2</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkCodigo" name="chkCalidadJuridica" value="Codigo del Trabajo" >
+            <input class="form-check-input" type="radio" id="a24" name="a24" value="3" >
             <label class="form-check-label" for="example-radios-inline1">3</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkHonorario" name="chkCalidadJuridica" value="Honorario" >
+            <input class="form-check-input" type="radio" id="a24" name="a24" value="4" >
             <label class="form-check-label" for="example-radios-inline2">4</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkSuplencia" name="chkCalidadJuridica" value="Suplencia" >
+            <input class="form-check-input" type="radio" id="a24" name="a24" value="5" >
             <label class="form-check-label" for="example-radios-inline1">5</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+            <input class="form-check-input" type="radio" id="a24" name="a24" value="6" >
             <label class="form-check-label" for="example-radios-inline2">6</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="chkOtro" name="chkCalidadJuridica" value="Otro" >
+            <input class="form-check-input" type="radio" id="a24" name="a24" value="7" >
             <label class="form-check-label" for="example-radios-inline2">7</label>
           </div>
           <label class="form-check-label" for="example-radios-inline1">Muy en desacuerdo </label>
@@ -714,8 +715,8 @@
 
       <div class="col-md-12">
         <br>
-        <label for="lblPlace" class="form-label">20. Por último, tiene algún comentario respecto a la última visita realizada al Departamento de Personal y/o a Subdirección de Personal, que nos ayude al mejorar.</label>
-        <textarea class="form-control" id="example-textarea-floating" name="example-textarea-floating" style="height: 70px" placeholder="Escriba aquí"></textarea>
+        <label for="lblPlace" class="form-label">25. Por último, tiene algún comentario respecto a la última visita realizada al Departamento de Personal y/o a Subdirección de Personal, que nos ayude al mejorar.</label>
+        <textarea class="form-control" id="a25" name="a25" style="height: 70px" placeholder="Escriba aquí"></textarea>
       </div>
 
             <div class="content py-12 text-center">
