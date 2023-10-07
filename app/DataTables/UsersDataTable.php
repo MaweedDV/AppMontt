@@ -23,57 +23,36 @@ class UsersDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->setRowId('id')
-            ->addColumn('action', '<div class="">
-                <a href="" class="btn btn-sm btn-primary" title="Editar"><i class="fa fa-edit"></i></a>
-                <a href="#" class="btn btn-sm btn-info" title="Ver"><i class="fa fa-eye"></i></a>
-                <a href="" class="btn btn-sm btn-danger" title="Eliminar"><i class="fa fa-trash"></i></a>
-                <script>
-                $(document).ready(function() {
-                    $(".btn-danger").on("click", function(e) {
-                        e.preventDefault();
-                        var $button = $(this);
-                        Swal.fire({
-                            title: "¿Estás seguro?",
-                            text: "Una vez eliminado, no podrás recuperar este registro!",
-                            icon: "warning",
-                            showCancelButton: true,
-                            confirmButtonColor: "#6f9c40",
-                            cancelButtonColor: "#e04f1a",
-                            confirmButtonText: "Sí, eliminarlo",
-                            cancelButtonText: "Cancelar"
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                $.ajax({
-                                    url: $button.attr("href"),
-                                    method: "DELETE",
-                                    data: {
-                                        _token: $("meta[name=csrf-token]").attr("content"),
-                                    },
-                                    success: function(response) {
-                                        Swal.fire({
-                                            position: "top-end",
-                                            icon: "success",
-                                            title: "Eliminado",
-                                            text: "El registro ha sido eliminado",
-                                            showConfirmButton: false,
-                                            timer: 1800,
-                                            timerProgressBar: true,
-                                        })
-                                    }
-                                });
-                                Swal.fire({
-                                    position: "top-end",
-                                    icon: "success",
-                                    title: "Eliminado",
-                                    text: "El registro ha sido eliminado",
-                                    showConfirmButton: false,
-                                    timer: 1800,
-                                    timerProgressBar: true,
-                                  })
-                            }
-                        });
+            ->addColumn('action', '<div>
+            <a href="{{ route(\'users.edit\', $id) }}" class="btn btn-sm btn-alt-secondary" title="Editar"><i class="fa fa-edit"></i></a>
+            <form action="{{ route(\'users.destroy\', $id) }}" method="POST" style="display: inline-block;">
+                @csrf
+                @method(\'DELETE\')
+                <button type="submit" class="btn btn-sm btn-alt-danger" title="Eliminar"><i class="fa fa-trash"></i></button>
+            </form>
+            <script type="module">
+            $(document).ready(function() {
+                $(".btn-danger").on("click", function(e) {
+                    e.preventDefault();
+                    var $button = $(this);
+                    Swal.fire({
+                        title: "¿Estás seguro?",
+                        text: "Una vez eliminado, no podrás recuperar este registro!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#6f9c40",
+                        cancelButtonColor: "#e04f1a",
+                        confirmButtonText: "Sí, eliminarlo",
+                        cancelButtonText: "Cancelar"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $button.parent().submit();
+                            // update datatable
+                            table.draw();
+                        }
                     });
                 });
+            });
             </script>
             </div>');
     }
@@ -123,7 +102,7 @@ class UsersDataTable extends DataTable
                   ->exportable(false)
                   ->printable(false)
                   ->width(150)
-                  ->addClass('text-center'),
+                  ->addClass('text-center')
         ];
     }
 

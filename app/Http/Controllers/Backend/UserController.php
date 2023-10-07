@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\DataTables\UsersDataTable;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\StoreRequest;
+use App\Http\Requests\User\UpdateRequest;
+use App\Models\Place;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -16,30 +18,23 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('backend.sections.users.create');
+       $places = Place::all();
+
+        return view('backend.sections.users.create', compact('places'));
 
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        $request->validate([
-            'name' => 'required|min:5|max:50',
-            'email' => 'email|required|unique:users,email',
-            'txtRole' => 'required',
-            'txtPlace' => 'required',
-            'password' => 'required|confirmed|min:8|max:50',
-            'password_confirmation' => 'required'
-        ]);
-
         User::create([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
-            'role' => $request->get('txtRole'),
+            'role' => $request->get('role'),
             'place' => $request->get('txtPlace'),
-            'password' => $request->get('password'),
+            'password' => bcrypt($request->get('password')),
         ]);
 
-        return redirect()->route('users.index')->with('success', 'User created successfully');
+        return redirect()->route('users.index')->with('success', 'Usuario creado correctamente');
     }
 
     public function show(string $id)
@@ -54,34 +49,31 @@ class UserController extends Controller
         return view('backend.sections.users.edit', compact('user'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(UpdateRequest $request, string $id)
     {
-        $request->validate([
-            'name' => 'required|min:5|max:50',
-            'email' => 'email|required|unique:users,email,' . $id,
-            'txtRole' => 'required',
-            'txtPlace' => 'required',
-            'password' => 'required|confirmed|min:8|max:50',
-            'password_confirmation' => 'required'
-        ]);
-
         $user = User::find($id);
 
         $user->update([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
-            'role' => $request->get('txtRole'),
+            'role' => $request->get('role'),
             'place' => $request->get('txtPlace'),
-            'password' => $request->get('password'),
         ]);
 
-        return redirect()->route('users.index')->with('success', 'User updated successfully');
+        if($request->get('password')){
+            $user->update([
+                'password' => bcrypt($request->get('password'))
+            ]);
+        }
+
+        return redirect()->route('users.index')->with('success', 'Usuario actualizado correctamente');
     }
 
     public function destroy(string $id)
     {
         $user = User::find($id);
-
         $user->delete();
+
+        return redirect()->route('users.index')->with('success', 'Usuario eliminado correctamente');
     }
 }
