@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-
     <title>SUBDIRECCION DE PERSONAL</title>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
@@ -16,7 +15,6 @@
 
     @yield('css')
     @vite(['resources/sass/main.scss', 'resources/sass/dashmix/themes/_base.scss', 'resources/js/dashmix/app.js'])
-
     @yield('js')
 </head>
 
