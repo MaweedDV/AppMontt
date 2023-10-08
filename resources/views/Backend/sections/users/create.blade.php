@@ -26,10 +26,6 @@
                     <h3 class="block-title">Nuevo Usuario</h3>
                 </div>
                 <div class="block-content block-content-full row g-2">
-                    {{-- <form class="row g-3" method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data">
-                        @csrf
-
-                    </form> --}}
                     <div class="col-md-6">
                         <label for="lblName" class="form-label ">Nombre Completo</label>
                         <input type="text" class="form-control form-control-alt @error('name') is-invalid @enderror"
@@ -42,7 +38,8 @@
                     <div class="col-md-6">
                         <label for="lblEmail" class="form-label">Correo Electronico</label>
                         <input type="email" class="form-control form-control-alt @error('email') is-invalid @enderror"
-                            id="email" name="email" value="{{ old('email') }}">
+                            id="email" name="email" value="{{ old('email') }}"
+                            placeholder="Ingrese su correo electronico">
                         @error('email')
                             <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                         @enderror
@@ -70,7 +67,7 @@
                     <div class="col-md-6">
                         <label for="inputCity" class="form-label">Contraseña</label>
                         <input type="password" class="form-control form-control-alt @error('password') is-invalid @enderror"
-                            id="password" name="password">
+                            id="password" name="password" placeholder="Ingrese su contraseña">
                         @error('password')
                             <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                         @enderror
@@ -79,7 +76,7 @@
                         <label for="inputState" class="form-label">Confirmar contraseña</label>
                         <input type="password"
                             class="form-control form-control-alt @error('password_confirmation') is-invalid @enderror"
-                            id="password_confirmation" name="password_confirmation">
+                            id="password_confirmation" name="password_confirmation" placeholder="Confirme su contraseña">
                         @error('password_confirmation')
                             <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                         @enderror
