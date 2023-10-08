@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
             'name' => ['required', 'min:5', 'max:50'],
             'email' => ['required', 'email', 'unique:users,email'],
             'role' => ['required'],
-            'txtPlace' => ['required'],
+            'id_places' => ['required'],
             'password' => ['required', 'confirmed', 'min:8', 'max:50'],
             'password_confirmation' => ['required']
         ];

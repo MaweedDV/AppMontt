@@ -46,9 +46,14 @@
                     </div>
                     <div class="col-md-6">
                         <label for="lblPlaces" class="form-label">Dirección de Trabajo</label>
-                        <input type="text" class="form-control form-control-alt @error('txtPlace') is-invalid @enderror"
-                            id="txtPlace" name="txtPlace" value="{{ old('txtPlace') }}">
-                        @error('txtPlace')
+                        <select class="form-control form-control-alt @error('id_places') is-invalid @enderror"
+                            id="id_places" name="id_places" value="{{ old('id_places') }}">
+                            <option selected>Seleccione una opción</option>
+                            @foreach ($places as $place)
+                                <option value="{{ $place->id }}">{{ $place->description }}</option>
+                            @endforeach
+                        </select>
+                        @error('id_places')
                             <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                         @enderror
                     </div>

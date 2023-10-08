@@ -184,6 +184,6 @@ return [
         'image'                 => 'imagen',
         'surname'               => 'apellido',
         'customer_id'           => 'cliente',
-        'txtPlace'              => 'direccion de trabajo',
+        'id_places'              => 'direccion de trabajo',
     ],
 ];

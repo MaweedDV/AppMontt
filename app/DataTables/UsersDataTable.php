@@ -55,7 +55,8 @@ class UsersDataTable extends DataTable
                 });
             });
             </script>
-            </div>');
+            </div>')
+            ;
     }
 
     /**
@@ -63,7 +64,7 @@ class UsersDataTable extends DataTable
      */
     public function query(User $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()->select('id', 'name', 'role', 'email', 'id_places');
     }
 
     /**
@@ -75,6 +76,7 @@ class UsersDataTable extends DataTable
                     ->setTableId('users-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
+                    ->language('//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json')
                     //->dom('Bfrtip')
                     ->orderBy(0)
                     ->buttons([
@@ -98,6 +100,7 @@ class UsersDataTable extends DataTable
             Column::make('name')->title('Nombre'),
             Column::make('role')->title('Rol'),
             Column::make('email')->title('Correo Electronico'),
+            Column::make('id_places')->title('Lugar'),
             Column::computed('action')
                 ->title('')
                   ->exportable(false)
