@@ -31,8 +31,6 @@
                 {{ $dataTable->table() }}
             </div>
         </div>
-
-
     </div>
 @endsection
 

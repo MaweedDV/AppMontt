@@ -31,7 +31,8 @@
                                 class="block-content block-content-full px-lg-5 px-xl-6 py-4 py-md-5 py-lg-6 bg-body-extra-light">
                                 <div class="mb-2 text-center">
                                     <a class="link-fx fw-bold fs-1" href="index.html">
-                                        <span class="text-dark">SUBDIRECCION DE</span><span class="text-primary"> PERSONAL</span>
+                                        <span class="text-dark">SUBDIRECCION DE</span><span class="text-primary">
+                                            PERSONAL</span>
                                     </a>
                                     <p class="text-uppercase fw-bold fs-sm text-muted">
                                         Inicio de sesion
@@ -41,20 +42,29 @@
                                     @csrf
                                     <div class="mb-4">
                                         <div class="input-group input-group-lg">
-                                            <input type="email" class="form-control" id="login-username"
-                                                name="email" placeholder="correo electronico" />
+                                            <input type="email"
+                                                class="form-control @error('email') is-invalid @enderror"
+                                                value="{{ old('email') }}" autocomplete="email" autofocus
+                                                placeholder="correo electronico" name="email" />
                                             <span class="input-group-text">
                                                 <i class="fa fa-user-circle"></i>
                                             </span>
+                                            @error('email')
+                                                <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="mb-4">
                                         <div class="input-group input-group-lg">
-                                            <input type="password" class="form-control" id="login-password"
-                                                name="password" placeholder="contraseña" />
+                                            <input type="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                id="login-password" name="password" placeholder="contraseña" />
                                             <span class="input-group-text">
                                                 <i class="fa fa-asterisk"></i>
                                             </span>
+                                            @error('password')
+                                                <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div
