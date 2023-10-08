@@ -36,7 +36,7 @@
                 </li>
                 <li class="nav-main-heading">Mantenedores</li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link {{ request()->is('users-index') ? 'active' : '' }}"
+                    <a class="nav-main-link {{ request()->is('admin/users', 'admin/users/create') ? 'active' : '' }}"
                         href="{{ route('users.index') }}">
                         <i class="nav-main-link-icon fa fa-user-group"></i>
                         <span class="nav-main-link-name">Usuarios</span>
