@@ -39,6 +39,9 @@ class UserController extends Controller
 
     public function show(string $id)
     {
+        $user = User::find($id);
+
+        return view('backend.sections.users.show', compact('user'));
         //
     }
 
