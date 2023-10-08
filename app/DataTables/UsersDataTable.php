@@ -32,7 +32,7 @@ class UsersDataTable extends DataTable
             </form>
             <script type="module">
             $(document).ready(function() {
-                $(".btn-danger").on("click", function(e) {
+                $(".btn-alt-danger").on("click", function(e) {
                     e.preventDefault();
                     var $button = $(this);
                     Swal.fire({
