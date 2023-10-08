@@ -11,4 +11,11 @@ class HomeController extends Controller
         return view('dashboard');
     }
 
+    public function profile()
+    {
+        $user = auth()->user();
+
+        return view('backend.sections.profile.index', compact('user'));
+    }
+
 }

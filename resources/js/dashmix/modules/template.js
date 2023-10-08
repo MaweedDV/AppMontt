@@ -15,6 +15,9 @@ import Helpers from "./helpers";
 import swal from "sweetalert2";
 window.Swal = swal;
 
+// Import Select2
+import "select2";
+
 // Assignments
 window.bootstrap = bootstrap;
 window.SimpleBar = SimpleBar;
@@ -49,6 +52,7 @@ export default class Template {
     this._lHeaderSearchInput = document.getElementById(
       "page-header-search-input"
     );
+
     this._lHeaderLoader = document.getElementById("page-header-loader");
     this._lMain = document.getElementById("main-container");
     this._lFooter = document.getElementById("page-footer");

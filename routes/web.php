@@ -13,22 +13,36 @@ Auth::routes();
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 
+    Route::get('/profile', [BackEndHomeController::class, 'profile'])->name('profile');
     Route::get('/dashboard', [BackEndHomeController::class, 'index'])->name('dashboard');
 
+    // USERS
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/', [UserController::class, 'index'])->name('users.index');
+        Route::get('/create', [UserController::class, 'create'])->name('users.create');
+        Route::post('/', [UserController::class, 'store'])->name('users.store');
+        Route::get('/{id}', [UserController::class, 'show'])->name('users.show');
+        Route::get('/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
+        Route::put('/{id}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    });
+
+    // SURVEYS
+    // Route::group(['prefix' => 'surveys'], function () {
+    //     Route::get('/', [SurveyController::class, 'index'])->name('surveys.index');
+    //     Route::get('/create', [SurveyController::class, 'create'])->name('surveys.create');
+    //     Route::post('/', [SurveyController::class, 'store'])->name('surveys.store');
+    //     Route::get('/{id}', [SurveyController::class, 'show'])->name('surveys.show');
+    //     Route::get('/edit/{id}', [SurveyController::class, 'edit'])->name('surveys.edit');
+    //     Route::put('/{id}', [SurveyController::class, 'update'])->name('surveys.update');
+    //     Route::delete('/{id}', [SurveyController::class, 'destroy'])->name('surveys.destroy');
+    // });
 });
 
 // Route::middleware(['auth', 'role:customer'])->prefix('my-account')->group(function () {
 
 // });
 Route::get('/', [FrontEndHomeController::class, 'index'])->name('home');
-
-// USERS
-Route::get('/users-index', [UserController::class, 'index'])->name('users.index');
-Route::get('/users-create', [UserController::class, 'create'])->name('users.create');
-Route::post('/users-store', [UserController::class, 'store'])->name('users.store');
-Route::get('/users-edit/{id}', [UserController::class, 'edit'])->name('users.edit');
-Route::put('/users-update/{id}', [UserController::class, 'update'])->name('users.update');
-Route::delete('/users-destroy/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 // SURVEYS
 Route::get('/surveys', [SurveyController::class, 'index'])->name('surveys');

@@ -6,11 +6,11 @@
  */
 
 // Import required modules
-import Template from './modules/template';
+import Template from "./modules/template";
 
 // import '../../../vendor/power-components/livewire-powergrid/dist/powergrid';
 // import '../../../vendor/power-components/livewire-powergrid/dist/powergrid.css';
-import 'laravel-datatables-vite';
+import "laravel-datatables-vite";
 
 // App extends Template
 export default class App extends Template {
@@ -41,7 +41,6 @@ export default class App extends Template {
    */
 
   //  _uiInit() {}
-
 
   /*
    * EXAMPLE #2 - Extending default functionality with additional code
