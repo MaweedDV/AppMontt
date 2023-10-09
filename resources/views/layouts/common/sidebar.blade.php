@@ -42,7 +42,14 @@
                         <span class="nav-main-link-name">Usuarios</span>
                     </a>
                 </li>
-                <li class="nav-main-heading">Administrador</li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link {{ request()->is('admin/forms/rsf', 'admin/forms/rsf/create') ? 'active' : '' }}"
+                        href="{{ route('rsf.index') }}">
+                        <i class="nav-main-link-icon fa fa-user-group"></i>
+                        <span class="nav-main-link-name">Reclamos, Sugerencias y Felicitaciones</span>
+                    </a>
+                </li>
+                <li class="nav-main-heading">Formularios</li>
                 <li class="nav-main-item">
                     <a class="nav-main-link{{ request()->is('/surveys') ? ' active' : '' }}" href="/surveys">
                         <i class="nav-main-link-icon fa fa-clipboard-list"></i>
