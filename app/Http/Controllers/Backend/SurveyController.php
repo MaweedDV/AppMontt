@@ -12,7 +12,7 @@ class SurveyController extends Controller
      */
     public function index()
     {
-        return view('Backend.surveys.index');
+        return view('Backend.sections.surveys.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class SurveyController extends Controller
      */
     public function create()
     {
-        return view('Backend.surveys.survey');
+        return view('Backend.sections.surveys.survey');
     }
 
     /**

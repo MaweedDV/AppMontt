@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\form_rsf;
+use App\DataTables\FormRsfDataTable;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SrfForm\StoreRequest;
+use App\Models\Place;
 use Illuminate\Http\Request;
 
 class FormRsfController extends Controller
@@ -11,8 +14,9 @@ class FormRsfController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(FormRsfDataTable $dataTable)
     {
+        return $dataTable->render('Backend.sections.forms.form-rsf.index');
 
     }
 
@@ -21,34 +25,31 @@ class FormRsfController extends Controller
      */
     public function create()
     {
-        return view('Backend.surveys.form_rsf');
+        $places = Place::all();
+
+        return view('Backend.sections.forms.form-rsf.create', compact('places'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        $form_rsf = new form_rsf();
 
-        $form_rsf->name = $_POST['txtName'];
-        $form_rsf->date_attention = $_POST['txtDate'];
-        $form_rsf->hour_attention = $_POST['txtHour'];
-        $form_rsf->email = $_POST['txtEmail'];
-        $form_rsf->phone = $_POST['txtPhone'];
-        $form_rsf->address = $_POST['txtAddress'];
-        $form_rsf->place_job = $_POST['txtPlace_Job'];
-        $form_rsf->type_procedure = $_POST['txtType_Procedure'];
-        $form_rsf->area_attention = $_POST['txtArea_attention'];
-        $form_rsf->observation = $_POST['txtObservation'];
+        form_rsf::create([
+            'name' => $request->get('name'),
+            'date_attention' => $request->get('date_attention'),
+            'hour_attention' => $request->get('hour_attention'),
+            'email' => $request->get('email'),
+            'phone' => $request->get('phone'),
+            'address' => $request->get('address'),
+            'place_job' => $request->get('place_job'),
+            'type_procedure' => $request->get('type_procedure'),
+            'area_attention' => $request->get('area_attention'),
+            'observation' => $request->get('observation'),
+        ]);
 
-        $form_rsf->save();
-
-        echo'<script type="text/javascript">
-        alert("Proceso ingresado con exito");
-        window.location.href="surveys";
-    </script>';
-
+        return redirect()->route('rsf.index')->with('success', 'Formulario ingresado correctamente');
 
     }
 
@@ -79,8 +80,11 @@ class FormRsfController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(form_rsf $form_rsf)
+    public function destroy(string $id)
     {
-        //
+        $form_rsf = form_rsf::find($id);
+        $form_rsf->delete();
+
+        return redirect()->route('form_rsf.index')->with('success', 'Formulario eliminado correctamente');
     }
 }
