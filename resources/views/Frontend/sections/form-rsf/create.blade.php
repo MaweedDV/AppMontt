@@ -1,25 +1,19 @@
-@extends('layouts.backend')
+@extends('layouts.backendSurvey')
 
 @section('content')
     <div class="bg-body-light">
-        <div class="content content-full">
-            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+        <div class="content content-full text">
+            <div class="align-items-sm-center text-center">
                 <div>
-                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Reclamos Sugerencias y Felicitaciones</h1>
-
+                    {{-- centrar etiquetas --}}
+                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Formulario de Reclamos, Sugerencias y/o Felicitaciones</h1>
                 </div>
-                <nav class="flex-shrink-0 my-2 my-sm-0 ms-sm-3" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">Inicio</li>
-                        <li class="breadcrumb-item">Reclamos Sugerencias y Felicitaciones</li>
-                        <li class="breadcrumb-item active" aria-current="page">Nuevo Ingreso</li>
-                    </ol>
-                </nav>
             </div>
         </div>
     </div>
     <div class="content">
-        <form action="{{ route('rsf.store') }}" method="POST"enctype="multipart/form-data">
+      <div class="row items-push">
+        <form action="{{ route('form_rsf.store') }}" method="POST"enctype="multipart/form-data">
             @csrf
             <div class="block block-rounded">
                 <div class="block-header block-header-default">
@@ -142,7 +136,7 @@
                   </div>
                 </div>
                 <div class="block-content block-content-full block-content-sm bg-body-light text-end">
-                    <a type="button" class="btn btn-md btn-alt-secondary" href="{{ route('rsf.index') }}"><i
+                    <a type="button" class="btn btn-md btn-alt-secondary" href="{{ route('form.index') }}"><i
                             class="fa fa-angle-left opacity-50 me-1"></i> Volver</a>
                     <button type="submit" class="btn btn-md btn-alt-success">
                         <i class="fa fa-check opacity-50 me-1"></i> Guardar
@@ -150,5 +144,20 @@
                 </div>
             </div>
         </form>
+      </div>
     </div>
+
+
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+

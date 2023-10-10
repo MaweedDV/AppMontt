@@ -1,75 +1,40 @@
-@extends('layouts.backendSurvey')
+@extends('layouts.backend')
 
 @section('content')
     <div class="bg-body-light">
         <div class="content content-full">
             <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
                 <div>
-                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Formularios</h1>
+                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Administracion de Encuestas</h1>
                 </div>
+                <nav class="flex-shrink-0 my-2 my-sm-0 ms-sm-3" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">Inicio</li>
+                        <li class="breadcrumb-item active" aria-current="page">Reclamos Sugerencias y Felicitaciones</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+
             </div>
         </div>
     </div>
     <div class="content">
-      <div class="row items-push">
-        <div class="col-md-6">
-            <a class="block block-rounded text-center block-link-pop" href="{{route('form_rsf.create')}}">
-              <div class="block-header block-header-default" style="align-content: center">
-                <h2>Sugerencias, Reclamos y/o Felicitaciones</h2>
-                {{-- centrar etiqueta de titulo tarjeta --}}
-              </div>
-              <div class="block-content">
-                <div class="block-content block-content-full ">
-                    <div class="d-flex justify-content-center align-items-center">
-                      <div class="justify-content-center align-items-center">
-                        <h1><i class="fa fa-6x fa-book-open text-primary"></i></h1><br>
-                        <H3>Ingrese Aquí</H3>
-                      </div>
-                    </div>
-                </div>
-                <p>Formulario para ingresar felicitaciones, reclamos o sugerencias para la mejora de gestión administrativa </p>
-              </div>
-            </a>
+        <div class="block block-rounded">
+            <div class="block-header block-header-default">
+                <a type="submit" class="btn btn-md btn-alt-primary" href="{{ route('surveys.create') }}"><i
+                        class="fas fa-user-plus"></i>
+                    Nuevo Formulario
+                </a>
+            </div>
+            <div class="block-content block-content-full col-md-12 col-xl-12">
+                {{-- {{ $dataTable->table() }} --}}
+            </div>
         </div>
-
-        <div class="col-md-6">
-            <a class="block block-rounded text-center block-link-pop" href="{{route('surveys.create')}}">
-              <div class="block-header block-header-default">
-                <h2>Encuesta de satisfacción</h2>
-              </div>
-              <div class="block-content">
-                <div class="block-content block-content-full ">
-                    <div class="d-flex justify-content-center align-items-center">
-                      <div class="justify-content-center align-items-center">
-                        <h1><i class="fa fa-6x fa-clipboard-list text-primary"></i></h1><br>
-                        <H3>Ingrese Aquí</h3>
-                      </div>
-                    </div>
-                </div>
-                <p>Encuesta de satisfaccion realizada por funcionarios Municipales</p>
-              </div>
-            </a>
-        </div>
-
-
-
-
-      </div>
     </div>
-
-
 @endsection
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+{{-- @push('scripts')
+    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
+@endpush --}}

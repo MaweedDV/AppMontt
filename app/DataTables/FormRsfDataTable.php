@@ -100,8 +100,8 @@ class FormRsfDataTable extends DataTable
             Column::make('date_attention')->title('Fecha atención'),
             Column::make('hour_attention')->title('Hora Atención'),
             Column::make('email')->title('Correo Electrónico'),
-            Column::make('phone')->title('Teléfono'),
-            Column::make('address')->title('Dirección'),
+            // Column::make('phone')->title('Teléfono'),
+            // Column::make('address')->title('Dirección'),
             Column::make('place_job')->title('Lugar de Trabajo'),
             Column::make('type_procedure')->title('Tipo Observación'),
             Column::make('area_attention')->title('Area Atención'),
@@ -110,7 +110,7 @@ class FormRsfDataTable extends DataTable
                   ->title('')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(100)
+                  ->width(150)
                   ->addClass('text-center'),
         ];
     }

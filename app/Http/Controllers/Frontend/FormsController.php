@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Place;
 use Illuminate\Http\Request;
 
-class SurveyController extends Controller
+class FormsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('Backend.sections.forms.surveys.index');
+        return view('Frontend.sections.index');
     }
 
     /**
@@ -21,9 +20,7 @@ class SurveyController extends Controller
      */
     public function create()
     {
-        $places = Place::all();
-
-        return view('Backend.sections.forms.surveys.create', compact('places'));
+        //
     }
 
     /**
@@ -39,7 +36,7 @@ class SurveyController extends Controller
      */
     public function show(string $id)
     {
-
+        //
     }
 
     /**

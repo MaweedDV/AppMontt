@@ -96,7 +96,7 @@ class UsersDataTable extends DataTable
     {
         return [
 
-            Column::make('id')->title('#')->width(100),
+            Column::make('id')->title('#')->width(50),
             Column::make('name')->title('Nombre'),
             Column::make('role')->title('Rol'),
             Column::make('email')->title('Correo Electronico'),

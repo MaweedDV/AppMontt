@@ -42,24 +42,26 @@
                         <span class="nav-main-link-name">Usuarios</span>
                     </a>
                 </li>
+                <li class="nav-main-heading">Formularios</li>
                 <li class="nav-main-item">
                     <a class="nav-main-link {{ request()->is('admin/forms/rsf', 'admin/forms/rsf/create') ? 'active' : '' }}"
                         href="{{ route('rsf.index') }}">
-                        <i class="nav-main-link-icon fa fa-user-group"></i>
+                        <i class="nav-main-link-icon fa fa-book-open"></i>
                         <span class="nav-main-link-name">Reclamos, Sugerencias y Felicitaciones</span>
                     </a>
                 </li>
-                <li class="nav-main-heading">Formularios</li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('/surveys') ? ' active' : '' }}" href="/surveys">
+                    <a class="nav-main-link {{ request()->is('admin/forms/surveys', 'admin/forms/surveys/create') ? 'active' : '' }}"
+                        href="{{ route('surveys.index') }}">
                         <i class="nav-main-link-icon fa fa-clipboard-list"></i>
                         <span class="nav-main-link-name">Encuestas</span>
                     </a>
                 </li>
+                <li class="nav-main-heading">Accesos</li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('/surveys') ? ' active' : '' }}" href="/surveys">
+                    <a class="nav-main-link{{ request()->is('/form.index') ? ' active' : '' }}" href="{{ route('form.index') }}">
                         <i class="nav-main-link-icon fa fa-book-open-reader"></i>
-                        <span class="nav-main-link-name">Sugerencias, Reclamos y/o Felicitaciones</span>
+                        <span class="nav-main-link-name">Formularios cliente</span>
                     </a>
                 </li>
 

@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController as FrontEndHomeController;
 use App\Http\Controllers\Backend\HomeController as BackEndHomeController;
 use App\Http\Controllers\Backend\SurveyController;
+use App\Http\Controllers\Frontend\SurveyControllerFront;
+use App\Http\Controllers\Frontend\FormRsfControllerFront;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Frontend\FormsController;
 use App\Models\form_rsf;
 use App\Models\User;
 
@@ -38,15 +41,15 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     });
 
     //SURVEYS
-    // Route::group(['prefix' => 'surveys'], function () {
-    //     Route::get('/', [SurveyController::class, 'index'])->name('surveys.index');
-    //     Route::get('/create', [SurveyController::class, 'create'])->name('surveys.create');
-    //     Route::post('/', [SurveyController::class, 'store'])->name('surveys.store');
+    Route::group(['prefix' => 'surveys'], function () {
+         Route::get('/', [SurveyController::class, 'index'])->name('surveys.index');
+         Route::get('/create', [SurveyController::class, 'create'])->name('surveys.create');
+         Route::post('/', [SurveyController::class, 'store'])->name('surveys.store');
     //     Route::get('/{id}', [SurveyController::class, 'show'])->name('surveys.show');
     //     Route::get('/edit/{id}', [SurveyController::class, 'edit'])->name('surveys.edit');
     //     Route::put('/{id}', [SurveyController::class, 'update'])->name('surveys.update');
     //     Route::delete('/{id}', [SurveyController::class, 'destroy'])->name('surveys.destroy');
-    // });
+    });
 
     //FORM RSF
     Route::group(['prefix' => 'form_rsf'], function () {
@@ -61,15 +64,19 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 // Route::middleware(['auth', 'role:customer'])->prefix('my-account')->group(function () {
 
 // });
+
+// FRONTEND INDEX
 Route::get('/', [FrontEndHomeController::class, 'index'])->name('home');
+Route::get('/form_index', [FormsController::class, 'index'])->name('form.index');
 
-// SURVEYS
-Route::get('/surveys', [SurveyController::class, 'index'])->name('surveys');
-Route::get('/create', [SurveyController::class, 'create'])->name('surveys.create');
 
-//FORM RSF
-Route::get('/form_rsf', [FormRsfController::class, 'create'])->name('form_rsf.create');
-Route::post('/form_rsf', [FormRsfController::class, 'store'])->name('form_rsf.store');
+// SURVEYS FRONTEND
+Route::get('/surveys', [SurveyControllerFront::class, 'create'])->name('surveysFront.create');
+Route::get('/', [SurveyControllerFront::class, 'store'])->name('surveysFront.store');
+
+//FORM RSF FRONTEND
+Route::get('/form_rsf', [FormRsfControllerFront::class, 'create'])->name('form_rsf.create');
+Route::post('/', [FormRsfControllerFront::class, 'store'])->name('form_rsf.store');
 
 
 
