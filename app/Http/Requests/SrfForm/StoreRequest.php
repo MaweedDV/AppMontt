@@ -26,7 +26,7 @@ class StoreRequest extends FormRequest
             'date_attention' => ['required'],
             'hour_attention' => ['required'],
             'email' => ['required',  'email'],
-            'phone' => ['required', 'confirmed', 'min:8', 'max:50'],
+            'phone' => ['required', 'min:8', 'max:50'],
             'address' => ['required'],
             'place_job' => ['required'],
             'type_procedure' => ['required'],
