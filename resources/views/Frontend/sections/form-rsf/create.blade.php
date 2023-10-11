@@ -13,7 +13,7 @@
     </div>
     <div class="content">
       <div class="row items-push">
-        <form action="{{ route('form_rsf.store') }}" method="POST"enctype="multipart/form-data">
+        <form action="{{ route('rsf.front.store') }}" method="POST"enctype="multipart/form-data">
             @csrf
             <div class="block block-rounded">
                 <div class="block-header block-header-default">

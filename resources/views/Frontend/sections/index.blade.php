@@ -13,7 +13,7 @@
     <div class="content">
       <div class="row items-push">
         <div class="col-md-6">
-            <a class="block block-rounded text-center block-link-pop" href="{{route('form_rsf.create')}}">
+            <a class="block block-rounded text-center block-link-pop" href="{{route('rsf.front.create')}}">
               <div class="block-header block-header-default" style="align-content: center">
                 <h2>Sugerencias, Reclamos y/o Felicitaciones</h2>
                 {{-- centrar etiqueta de titulo tarjeta --}}
@@ -33,7 +33,7 @@
         </div>
 
         <div class="col-md-6">
-            <a class="block block-rounded text-center block-link-pop" href="{{route('surveysFront.create')}}">
+            <a class="block block-rounded text-center block-link-pop" href="{{route('surveys.front.create')}}">
               <div class="block-header block-header-default">
                 <h2>Encuesta de satisfacción</h2>
               </div>
