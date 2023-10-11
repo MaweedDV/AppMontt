@@ -24,10 +24,10 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
-                                131
+                                {{$surveys}}
                             </p>
                             <p class="text-white-75 mb-0">
-                                Ventas
+                                Encuestas
                             </p>
                         </div>
                         <div>
@@ -41,10 +41,11 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
-                                150
+
+                                {{$frs}}
                             </p>
                             <p class="text-white-75 mb-0">
-                                Pedidos
+                                Reclamos, Sugerencias y Felcitaciones
                             </p>
                         </div>
                         <div>
@@ -58,7 +59,7 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
-                                63
+                                {{$sugerencias}}
                             </p>
                             <p class="text-white-75 mb-0">
                                 Ganancias
