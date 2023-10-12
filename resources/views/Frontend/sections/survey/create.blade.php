@@ -357,14 +357,14 @@
                 <input class="form-check-input" type="radio" id="g14" name="a14" value="7" >
                 <label class="form-check-label" for="a14">7</label>
               </div>
-              <label class="form-check-label" for="a14">Muy en desacuerdo </label>
+              <label class="form-check-label" for="a14">Muy de acuerdo </label>
             </div>
             <BR>
         </div>
 
         <div class="col-mb-12">
           <br>
-          <label for="a15" class="form-label">15. En relación a la solución de su trámite o gestión, ¿cumplió sus expectativas?.
+          <label for="a15" class="form-label">15. El funcionario del departamento de Personal, domina la materia relacionada con mi trámite o gestión.
           </label>
 
           <div class="space-x-3 text-center">
@@ -398,14 +398,14 @@
               <input class="form-check-input" type="radio" id="g15" name="a15" value="7" >
               <label class="form-check-label" for="a15">7</label>
             </div>
-            <label class="form-check-label" for="a15">Muy en desacuerdo </label>
+            <label class="form-check-label" for="a15">Muy de acuerdo </label>
           </div>
           <BR>
       </div>
 
             <div class="col-mb-12">
               <br>
-              <label for="a16" class="form-label">16. El funcionario del departamento de Personal, domina la materia relacionada con mi trámite o gestión.
+              <label for="a16" class="form-label">16. El funcionario de Personal que me atendió, es confiable.
               </label>
 
               <div class="space-x-3 text-center">
@@ -439,122 +439,126 @@
                   <input class="form-check-input" type="radio" id="g16" name="a16" value="7" >
                   <label class="form-check-label" for="a16">7</label>
                 </div>
-                <label class="form-check-label" for="a16">Muy en desacuerdo </label>
+                <label class="form-check-label" for="a16">Muy de acuerdo </label>
               </div>
               <BR>
           </div>
 
           <div class="col-mb-12">
             <br>
-            <label for="a17" class="form-label">17. El funcionario de Personal que me atendió, es confiable.
+            <label for="a17" class="form-label">17. Siente que sufrió algún tipo de discriminación de cualquier tipo. (Político, religioso, de genero, físico, etc.).
             </label>
-
-            <div class="space-x-3 text-center">
-              <br>
-                <label class="form-check-label" for="a17">Muy en desacuerdo </label>
-              <div class="form-check form-check-inline">
-                <label class="form-check-label" for="a17">1</label>
-                <input class="form-check-input" type="radio" id="a17" name="a17" value="1" >
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="b17" name="a17" value="2" >
-                <label class="form-check-label" for="a17">2</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="c17" name="a17" value="3" >
-                <label class="form-check-label" for="a17">3</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="d17" name="a17" value="4" >
-                <label class="form-check-label" for="a17">4</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="e17" name="a17" value="5" >
-                <label class="form-check-label" for="a17">5</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="f17" name="a17" value="6" >
-                <label class="form-check-label" for="a17">6</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="g17" name="a17" value="7" >
-                <label class="form-check-label" for="a17">7</label>
-              </div>
-              <label class="form-check-label" for="a17">Muy en desacuerdo </label>
+            <div class="space-y-2">
+                <br>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" id="a17" name="a17" value="SI" checked="">
+                <label class="form-check-label" for="a17">SI</label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" id="b17" name="a17" value="NO">
+                <label class="form-check-label" for="a17">NO</label>
+                </div>
             </div>
             <BR>
+
         </div>
 
         <div class="col-mb-12">
           <br>
-          <label for="a18" class="form-label">18. En general, considerando todas las variables anteriores, como evaluaría la experiencia de su visita al área de personal al cual se dirigió.
+          <label for="a18" class="form-label">18. Si su respuesta anterior fue SI, indique por que motivo se sintió discriminado.
           </label>
 
-          <div class="space-x-3 text-center">
-            <br>
-              <label class="form-check-label" for="a18">Muy en desacuerdo </label>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="a18">1</label>
-              <input class="form-check-input" type="radio" id="a18" name="a18" value="1" >
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="b18" name="a18" value="2" >
-              <label class="form-check-label" for="a18">2</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="c18" name="a18" value="3" >
-              <label class="form-check-label" for="a18">3</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="d18" name="a18" value="4" >
-              <label class="form-check-label" for="a18">4</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="e18" name="a18" value="5" >
-              <label class="form-check-label" for="a18">5</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="f18" name="a18" value="6" >
-              <label class="form-check-label" for="a18">6</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="g18" name="a18" value="7" >
-              <label class="form-check-label" for="a18">7</label>
-            </div>
-            <label class="form-check-label" for="a18">Muy en desacuerdo </label>
-          </div>
+          <textarea class="form-control" id="a18" name="a18" style="height: 70px" placeholder="Escriba aquí"></textarea>
           <BR>
       </div>
 
 
         <div class="mb-12">
           <br>
-          <label for="a19" class="form-label">19. Siente que sufrió algún tipo de discriminación de cualquier tipo. (Político, religioso, de genero, físico, etc.)</label>
-          <div class="space-y-2">
+          <label for="a19" class="form-label">19. El Área de Personal es confiable.</label>
+
+          <div class="space-x-3 text-center">
             <br>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" id="a19" name="a19" value="SI" checked="">
-              <label class="form-check-label" for="a19">SI</label>
+              <label class="form-check-label" for="a19">Muy en desacuerdo </label>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="a19">1</label>
+              <input class="form-check-input" type="radio" id="a19" name="a19" value="1" >
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" id="b19" name="a19" value="NO">
-              <label class="form-check-label" for="a19">NO</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="b19" name="a19" value="2" >
+              <label class="form-check-label" for="a19">2</label>
             </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="c19" name="a19" value="3" >
+              <label class="form-check-label" for="a19">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="d19" name="a19" value="4" >
+              <label class="form-check-label" for="a19">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="e19" name="a19" value="5" >
+              <label class="form-check-label" for="a19">5</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="f19" name="a19" value="6" >
+              <label class="form-check-label" for="a19">6</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="g19" name="a19" value="7" >
+              <label class="form-check-label" for="a19">7</label>
+            </div>
+            <label class="form-check-label" for="a20">Muy de acuerdo</label>
           </div>
           <BR>
-        </div>
+
+
+                </div>
 
         <div for="20" class="col-md-12">
           <br>
-          <label for="a20" class="form-label">20. Si su respuesta anterior fue SI, indique por que motivo se sintió discriminado.</label>
-          <textarea class="form-control" id="a20" name="a20" style="height: 70px" placeholder="Escriba aquí"></textarea>
+          <label for="a20" class="form-label">20. El Área de Personal es eficiente.</label>
+          <div class="space-x-3 text-center">
+            <br>
+              <label class="form-check-label" for="a20">Muy en desacuerdo </label>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="a20">1</label>
+              <input class="form-check-input" type="radio" id="a20" name="a20" value="1" >
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="b20" name="a20" value="2" >
+              <label class="form-check-label" for="a20">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="c20" name="a20" value="3" >
+              <label class="form-check-label" for="a20">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="d20" name="a20" value="4" >
+              <label class="form-check-label" for="a20">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="e20" name="a20" value="5" >
+              <label class="form-check-label" for="a20">5</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="f20" name="a20" value="6" >
+              <label class="form-check-label" for="a20">6</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="g20" name="a20" value="7" >
+              <label class="form-check-label" for="a20">7</label>
+            </div>
+            <label class="form-check-label" for="a20">Muy de acuerdo</label>
+          </div>
           <BR>
+
       </div>
 
 
       <div class="col-mb-12">
         <br>
-        <label for="a21" class="form-label">21. El Área de Personal es confiable.
+        <label for="a21" class="form-label">21. El Área de Personal es cercana.
         </label>
 
         <div class="space-x-3 text-center">
@@ -588,19 +592,19 @@
             <input class="form-check-input" type="radio" id="g21" name="a21" value="7" >
             <label class="form-check-label" for="a21">7</label>
           </div>
-          <label class="form-check-label" for="a21">Muy en desacuerdo </label>
+          <label class="form-check-label" for="a21">Muy de acuerdo </label>
         </div>
         <BR>
       </div>
 
       <div class="col-mb-12">
         <br>
-        <label for="a22" class="form-label">22. El Área de Personal es eficiente.
+        <label for="a22" class="form-label">22. En relación a la solución de su trámite o gestión, ¿fué solucionado satisfactoriamente?.
         </label>
 
         <div class="space-x-3 text-center">
           <br>
-            <label class="form-check-label" for="a22">Muy en desacuerdo </label>
+            <label class="form-check-label" for="a22">Totalmente insatisfecho </label>
           <div class="form-check form-check-inline">
             <label class="form-check-label" for="a22">1</label>
             <input class="form-check-input" type="radio" id="a22" name="a22" value="1" >
@@ -629,19 +633,19 @@
             <input class="form-check-input" type="radio" id="g22" name="a22" value="7" >
             <label class="form-check-label" for="a22">7</label>
           </div>
-          <label class="form-check-label" for="a22">Muy en desacuerdo </label>
+          <label class="form-check-label" for="a22">Totalmente satisfecho </label>
         </div>
         <BR>
       </div>
 
       <div class="col-mb-12">
         <br>
-        <label for="a23" class="form-label">23. El Área de Personal es cercana.
+        <label for="a23" class="form-label">23. En general, considerando todas las variables anteriores, y a todas las secciones y áreas en una escala de 1 a 7, cómo evaluaría la experiencia de su visita al área de personal a la cual se dirigió.
         </label>
 
         <div class="space-x-3 text-center">
           <br>
-            <label class="form-check-label" for="a23">Muy en desacuerdo </label>
+            <label class="form-check-label" for="a23">Pésimo</label>
           <div class="form-check form-check-inline">
             <label class="form-check-label" for="a23">1</label>
             <input class="form-check-input" type="radio" id="a23" name="a23" value="1" >
@@ -670,56 +674,16 @@
             <input class="form-check-input" type="radio" id="g23" name="a23" value="7" >
             <label class="form-check-label" for="a23">7</label>
           </div>
-          <label class="form-check-label" for="a23">Muy en desacuerdo </label>
+          <label class="form-check-label" for="a23">Excelente</label>
         </div>
         <BR>
       </div>
 
-      <div class="col-mb-12">
-        <br>
-        <label for="a24" class="form-label">24. En general, considerando todas las variables anteriores, y a todas las secciones y áreas en una escala de 1 a 7, cuan satisfactoria fue la visita realizada.
-        </label>
-
-        <div class="space-x-3 text-center">
-          <br>
-            <label class="form-check-label" for="a24">Muy en desacuerdo </label>
-          <div class="form-check form-check-inline">
-            <label class="form-check-label" for="a24">1</label>
-            <input class="form-check-input" type="radio" id="a24" name="a24" value="1" >
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="b24" name="a24" value="2" >
-            <label class="form-check-label" for="a24">2</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="c24" name="a24" value="3" >
-            <label class="form-check-label" for="a24">3</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="d24" name="a24" value="4" >
-            <label class="form-check-label" for="a24">4</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="e24" name="a24" value="5" >
-            <label class="form-check-label" for="a24">5</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="f24" name="a24" value="6" >
-            <label class="form-check-label" for="a24">6</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="g24" name="a24" value="7" >
-            <label class="form-check-label" for="a24">7</label>
-          </div>
-          <label class="form-check-label" for="a24">Muy en desacuerdo </label>
-        </div>
-        <BR>
-      </div>
 
       <div class="col-md-12">
         <br>
-        <label for="a25" class="form-label">25. Por último, tiene algún comentario respecto a la última visita realizada al Departamento de Personal y/o a Subdirección de Personal, que nos ayude al mejorar.</label>
-        <textarea class="form-control" id="a25" name="a25" style="height: 70px" placeholder="Escriba aquí"></textarea>
+        <label for="a24" class="form-label">24. Por último, tiene algún comentario respecto a la última visita realizada al Departamento de Personal y/o a Subdirección de Personal, que nos ayude a mejorar.</label>
+        <textarea class="form-control" id="a24" name="a24" style="height: 70px" placeholder="Escriba aquí"></textarea>
       </div>
             <div class="block-content block-content-full block-content-sm bg-body-light text-end">
                     <a type="button" class="btn btn-md btn-alt-secondary" href="{{ route('form.index') }}"><i

@@ -24,7 +24,7 @@ class FormRsfDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->setRowId('id')
             ->addColumn('action', '<div>
-            <a href="{{ route(\'users.show\', $id) }}" class="btn btn-sm btn-alt-secondary" title="Ver"><i class="fa fa-eye"></i></a>
+            <a href="{{ route(\'rsf.show\', $id) }}" class="btn btn-sm btn-alt-secondary" title="Ver"><i class="fa fa-eye"></i></a>
             <a href="{{ route(\'users.edit\', $id) }}" class="btn btn-sm btn-alt-primary" title="Editar"><i class="fa fa-edit"></i></a>
             <form action="{{ route(\'form_rsf.destroy\', $id) }}" method="POST" style="display: inline-block;">
                 @csrf
@@ -105,7 +105,7 @@ class FormRsfDataTable extends DataTable
             Column::make('place_job')->title('Lugar de Trabajo'),
             Column::make('type_procedure')->title('Tipo Observación'),
             Column::make('area_attention')->title('Area Atención'),
-            Column::make('observation')->title('Observación'),
+            Column::make('subject')->title('Asunto'),
             Column::computed('action')
                   ->title('')
                   ->exportable(false)

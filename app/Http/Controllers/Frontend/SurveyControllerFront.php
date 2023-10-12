@@ -37,24 +37,22 @@ class SurveyControllerFront extends Controller
         //asignamos valores estáticos, en este caso preguntas de survey
         $name_encuesta = "Encuesta de satisfacción";
         $q8 = "Indique a que área del Departamento de Personal asistió";
-        $q8 = "Indique a que área del Departamento de Personal asistió";
         $q9 = "En relación con la pregunta anterior, podría indicarnos ¿qué trámite en especifico realizó?";
         $q10 = "Considera que la atención recibida del funcionario de Personal, fue amable y cordial. Un trato amable y cordial implica saludar, tratar con respeto, orientar al funcionario, y a su vez despedirse correctamente";
         $q11 = "El funcionario de Personal demostró interés en atender mi necesidad o solicitud";
         $q12 = "El funcionario de Personal se tomó el tiempo necesario en atenderme";
         $q13 = "El funcionario de Personal se expresa con claridad y me entrega la información adecuada";
         $q14 = "El tiempo total de espera, desde el momento en que llegué hasta que fuí atendido, fué adecuado";
-        $q15 = "En relación a la solución de su trámite o gestión, ¿cumplió sus expectativas?";
-        $q16 = "El funcionario del departamento de Personal, domina la materia relacionada con mi trámite o gestión";
-        $q17 = "El funcionario de Personal que me atendió, es confiable";
-        $q18 = "En general, considerando todas las variables anteriores, como evaluaría la experiencia de su visita al área de personal al cual se dirigió";
-        $q19 = "Siente que sufrió algún tipo de discriminación de cualquier tipo. (Político, religioso, de genero, físico, etc.)";
-        $q20 = "Si su respuesta anterior fue SI, indique por que motivo se sintió discriminado";
-        $q21 = "El Área de Personal es confiable";
-        $q22 = "El Área de Personal es eficiente";
-        $q23 = "El Área de Personal es cercana";
-        $q24 = "En general, considerando todas las variables anteriores, y a todas las secciones y áreas en una escala de 1 a 7, cuan satisfactoria fue la visita realizada";
-        $q25 = "Por último, tiene algún comentario respecto a la última visita realizada al Departamento de Personal y/o a Subdirección de Personal, que nos ayude al mejorar";
+        $q15 = "El funcionario del departamento de Personal, domina la materia relacionada con mi trámite o gestión";
+        $q16 = "El funcionario de Personal que me atendió, es confiable";
+        $q17 = "Siente que sufrió algún tipo de discriminación de cualquier tipo. (Político, religioso, de genero, físico, etc.)";
+        $q18 = "Si su respuesta anterior fue SI, indique por que motivo se sintió discriminado";
+        $q19 = "El Área de Personal es confiable";
+        $q20 = "El Área de Personal es eficiente";
+        $q21 = "El Área de Personal es cercana";
+        $q22 = "En relación a la solución de su trámite o gestión, ¿fué solucionado satisfactoriamente?";
+        $q23 = "En general, considerando todas las variables anteriores, y a todas las secciones y áreas en una escala de 1 a 7, cuan satisfactoria fue la visita realizada";
+        $q24 = "Por último, tiene algún comentario respecto a la última visita realizada al Departamento de Personal y/o a Subdirección de Personal, que nos ayude al mejorar";
 
 
         $survey = new Survey();
@@ -101,8 +99,6 @@ class SurveyControllerFront extends Controller
         $survey->a23 = $_POST['a23'];
         $survey->q24 = $q24;
         $survey->a24 = $_POST['a24'];
-        $survey->q25 = $q25;
-        $survey->a25 = $_POST['a25'];
 
         $survey->save();
 

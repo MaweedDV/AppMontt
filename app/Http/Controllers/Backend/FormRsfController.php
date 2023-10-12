@@ -56,9 +56,12 @@ class FormRsfController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(form_rsf $form_rsf)
+    public function show(string $id)
     {
-        //
+        $form_selected = form_rsf::find($id);
+
+
+        return view('Backend.sections.forms.form-rsf.show', compact('form_selected'));
     }
 
     /**
