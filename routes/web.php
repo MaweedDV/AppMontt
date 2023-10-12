@@ -13,6 +13,8 @@ use App\Http\Controllers\Frontend\FormsController;
 use App\Models\form_rsf;
 use App\Models\User;
 
+use function Livewire\store;
+
 Auth::routes();
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
@@ -64,19 +66,28 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 // Route::middleware(['auth', 'role:customer'])->prefix('my-account')->group(function () {
 
 // });
+    Route::group(['prefix' => 'people'], function () {
+        Route::group(['prefix' => 'surveys'], function () {
+            // SURVEYS FRONTEND
+            Route::get('/create', [SurveyControllerFront::class, 'create'])->name('surveys.front.create');
+            Route::post('/', [SurveyControllerFront::class, 'store'])->name('surveys.front.store');
+        });
+        Route::group(['prefix' => 'form-rsf'], function () {
+            //FORM RSF FRONTEND
+            Route::get('/create', [FormRsfControllerFront::class, 'create'])->name('rsf.front.create');
+            Route::post('/', [FormRsfControllerFront::class, 'store'])->name('rsf.front.store');
+
+        });
+
+    });
 
 // FRONTEND INDEX
 Route::get('/', [FrontEndHomeController::class, 'index'])->name('home');
 Route::get('/form_index', [FormsController::class, 'index'])->name('form.index');
 
 
-// SURVEYS FRONTEND
-Route::get('/surveys', [SurveyControllerFront::class, 'create'])->name('surveysFront.create');
-Route::get('/', [SurveyControllerFront::class, 'store'])->name('surveysFront.store');
 
-//FORM RSF FRONTEND
-Route::get('/form_rsf', [FormRsfControllerFront::class, 'create'])->name('form_rsf.create');
-Route::post('/', [FormRsfControllerFront::class, 'store'])->name('form_rsf.store');
+
 
 
 
