@@ -25,7 +25,7 @@
                 <div class="block-header block-header-default">
                     <h3 class="block-title"></h3>
                 </div>
-                <div class="block-content block-content-full row g-2">
+                {{-- <div class="block-content block-content-full row g-2">
                     <div class="col-md-6">
                         <label for="lblName" class="form-label">Nombre Completo</label>
                         <input type="text" class="form-control form-control-alt @error('name') is-invalid @enderror"
@@ -66,16 +66,121 @@
                             <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                         @enderror
                     </div>
-                    {{-- <div class="col-md-6">
+                    <div class="col-md-6">
                         <label for="lblRole" class="form-label">TEST</label>
                         <select class="select2" name="category">
                             <option value="{{ $user->name }}">{{ $user->name }}</option>
                         </select>
-                    </div> --}}
+                    </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control form-control-alt @error('password') is-invalid @enderror"
+                        id="password" name="password">
+                    @error('password')
+                        <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Confirmar contraseña</label>
+                    <input type="password"
+                        class="form-control form-control-alt @error('password_confirmation') is-invalid @enderror"
+                        id="password_confirmation" name="password_confirmation">
+                    @error('password_confirmation')
+                        <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div> --}}
+                <div class="block-content block-content-full row g-2">
+                    <div class="col-md-6">
+                        <label for="first_name" class="form-label ">Nombre</label>
+                        <input type="text"
+                            class="form-control form-control-alt @error('first_name') is-invalid @enderror" id="first_name"
+                            name="first_name" value="{{ old('last_name', $user->first_name) }}"
+                            placeholder="Ingrese nombre">
+                        @error('first_name')
+                            <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-md-6">
+                        <label for="last_name" class="form-label ">Apellido</label>
+                        <input type="text" class="form-control form-control-alt @error('last_name') is-invalid @enderror"
+                            id="last_name" name="last_name" value="{{ old('last_name', $user->last_name) }}"
+                            placeholder="Ingrese apellido">
+                        @error('last_name')
+                            <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lblEmail" class="form-label">Correo Electronico</label>
+                        <input type="email" class="form-control form-control-alt @error('email') is-invalid @enderror"
+                            id="email" name="email" value="{{ old('email', $user->email) }}"
+                            placeholder="Ingrese su correo electronico">
+                        @error('email')
+                            <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-md-3">
+                        <label for="rut" class="form-label ">Rut</label>
+                        <input type="text" class="form-control form-control-alt @error('rut') is-invalid @enderror"
+                            id="rut" name="rut" value="{{ old('rut', $user->rut) }}" placeholder="Ingrese rut">
+                        @error('rut')
+                            <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-md-3">
+                        <label for="lblRole" class="form-label">Rol</label>
+                        <select class="form-select form-control-alt @error('role') is-invalid @enderror" id="role"
+                            name="role">
+                            <option>Seleccione una opción</option>
+                            <option {{ old('role', $user->role) == 'admin' ? 'selected' : '' }} value="admin">admin
+                            </option>
+                            <option {{ old('role', $user->role) == 'customer' ? 'selected' : '' }} value="customer">
+                                customer
+                            </option>
+                        </select>
+                        @error('role')
+                            <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-md-6">
+                        <label for="department_id" class="form-label ">Departamento</label>
+                        <input type="text"
+                            class="form-control form-control-alt @error('department_id') is-invalid @enderror"
+                            id="department_id" name="department_id" value="{{ old('deparment_id', $user->deparment_id) }}"
+                            placeholder="Ingrese departamento">
+                        @error('department_id')
+                            <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lblPlaces" class="form-label">Dirección de Trabajo</label>
+                        <select class="form-control form-control-alt @error('id_places') is-invalid @enderror"
+                            id="id_places" name="id_places" value="{{ old('id_places') }}">
+                            <option selected>Seleccione una opción</option>
+                            @foreach ($places as $place)
+                                <option value="{{ $place->id }}">{{ $place->description }}</option>
+                            @endforeach
+                        </select>
+                        @error('id_places')
+                            <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    {{-- profile_photo_path --}}
+                    <div class="col-md-6">
+                        <label for="lblProfilePhoto" class="form-label">Foto de Perfil</label>
+                        <input type="file"
+                            class="form-control form-control-alt @error('profile_photo_path') is-invalid @enderror"
+                            id="profile_photo_path" name="profile_photo_path" value="{{ old('profile_photo_path') }}"
+                            placeholder="Ingrese foto de perfil">
+                        @error('profile_photo_path')
+                            <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
+                        @enderror
+                    </div>
                     <div class="col-md-6">
                         <label for="inputCity" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control form-control-alt @error('password') is-invalid @enderror"
-                            id="password" name="password">
+                        <input type="password"
+                            class="form-control form-control-alt @error('password') is-invalid @enderror" id="password"
+                            name="password" placeholder="Ingrese su contraseña">
                         @error('password')
                             <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                         @enderror
@@ -84,7 +189,7 @@
                         <label for="inputState" class="form-label">Confirmar contraseña</label>
                         <input type="password"
                             class="form-control form-control-alt @error('password_confirmation') is-invalid @enderror"
-                            id="password_confirmation" name="password_confirmation">
+                            id="password_confirmation" name="password_confirmation" placeholder="Confirme su contraseña">
                         @error('password_confirmation')
                             <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                         @enderror
