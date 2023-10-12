@@ -4,97 +4,79 @@ namespace App\Http\Controllers\Backend;
 
 use App\DataTables\UsersDataTable;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\StoreRequest;
+use App\Http\Requests\User\UpdateRequest;
+use App\Models\Place;
 use App\Models\User;
-use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Else_;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(UsersDataTable $dataTable)
     {
-
-        //$users = User::all();
-
-        return $dataTable->render('Backend.Users.index');
-        // dd($users); ---> modo debug dd(variable)
-
-        //return view('Backend.Users.index', compact('users'));
+        return $dataTable->render('backend.sections.users.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('Backend.Users.create');
+       $places = Place::all();
+
+        return view('backend.sections.users.create', compact('places'));
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        $user = new User();
+        User::create([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'role' => $request->get('role'),
+            'id_places' => $request->get('id_places'),
+            'password' => bcrypt($request->get('password')),
+        ]);
 
-
-        if ($_POST['txtPassword']==$_POST['txtConfirmPsw']) {
-            $user->name = $_POST['txtName'];
-            $user->email = $_POST['txtEmail'];
-            $user->role = $_POST['txtRole'];
-            $user->password = bcrypt($_POST['txtPassword']);
-
-            $user->save();
-
-            echo'<script type="text/javascript">
-                    alert("El usuario se agregó de forma correcta.");
-                    window.location.href="users";
-                </script>';
-
-        }else {
-            echo'<script type="text/javascript">
-                    alert("La confirmación de password no coincide.");
-                    window.location.href="users";
-                </script>';
-        };
-
-
-
-
+        return redirect()->route('users.index')->with('success', 'Usuario creado correctamente');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
+        $user = User::find($id);
+
+        return view('backend.sections.users.show', compact('user'));
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-      
+        $user = User::find($id);
+
+        return view('backend.sections.users.edit', compact('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(UpdateRequest $request, string $id)
     {
-        //
+        $user = User::find($id);
+
+        $user->update([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'role' => $request->get('role'),
+            'place' => $request->get('txtPlace'),
+        ]);
+
+        if($request->get('password')){
+            $user->update([
+                'password' => bcrypt($request->get('password'))
+            ]);
+        }
+
+        return redirect()->route('users.index')->with('success', 'Usuario actualizado correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->route('users.index')->with('success', 'Usuario eliminado correctamente');
     }
 }

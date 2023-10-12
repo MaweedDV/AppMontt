@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Place;
 use Illuminate\Http\Request;
 
 class SurveyController extends Controller
@@ -12,7 +13,7 @@ class SurveyController extends Controller
      */
     public function index()
     {
-        return view('Backend.surveys.index');
+        return view('Backend.sections.forms.surveys.index');
     }
 
     /**
@@ -20,7 +21,9 @@ class SurveyController extends Controller
      */
     public function create()
     {
-        return view('Backend.surveys.survey');
+        $places = Place::all();
+
+        return view('Backend.sections.forms.surveys.create', compact('places'));
     }
 
     /**

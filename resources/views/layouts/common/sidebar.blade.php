@@ -6,7 +6,7 @@
                     Pers<span class="opacity-75">onal</span>
                 </span>
                 <span class="smini-hidden">
-                    Subdirección d<span class="opacity-75">e Personal</span>
+                    APP<span class="opacity-75"> MONTT</span>
                 </span>
             </a>
             <div>
@@ -27,59 +27,44 @@
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('/admin/dashboard') ? ' active' : '' }}" href="/admin/dashboard">
-                        <i class="nav-main-link-icon fa fa-chart-line"></i>
+                    <a class="nav-main-link{{ request()->is('admin/dashboard') ? ' active' : '' }}"
+                        href="/admin/dashboard">
+                        <i class="nav-main-link-icon fa fa-chalkboard"></i>
                         <span class="nav-main-link-name">Dashboard</span>
 
                     </a>
                 </li>
-                <li class="nav-main-heading">Tienda</li>
-                <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
-                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
-                        aria-expanded="true" href="#">
-                        <i class="nav-main-link-icon fa fa-lightbulb"></i>
-                        <span class="nav-main-link-name">Examples</span>
-                    </a>
-                    <ul class="nav-main-submenu">
-                        <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('pages/datatables') ? ' active' : '' }}"
-                                href="/pages/datatables">
-                                <span class="nav-main-link-name">DataTables</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('pages/slick') ? ' active' : '' }}"
-                                href="/pages/slick">
-                                <span class="nav-main-link-name">Slick Slider</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('pages/blank') ? ' active' : '' }}"
-                                href="/pages/blank">
-                                <span class="nav-main-link-name">Blank</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-main-heading">Administrador</li>
+                <li class="nav-main-heading">Mantenedores</li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('/surveys') ? ' active' : '' }}" href="/surveys">
+                    <a class="nav-main-link {{ request()->is('admin/users', 'admin/users/create') ? 'active' : '' }}"
+                        href="{{ route('users.index') }}">
+                        <i class="nav-main-link-icon fa fa-user-group"></i>
+                        <span class="nav-main-link-name">Usuarios</span>
+                    </a>
+                </li>
+                <li class="nav-main-heading">Formularios</li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link {{ request()->is('admin/forms/rsf', 'admin/forms/rsf/create') ? 'active' : '' }}"
+                        href="{{ route('rsf.index') }}">
+                        <i class="nav-main-link-icon fa fa-book-open"></i>
+                        <span class="nav-main-link-name">Reclamos, Sugerencias y Felicitaciones</span>
+                    </a>
+                </li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link {{ request()->is('admin/forms/surveys', 'admin/forms/surveys/create') ? 'active' : '' }}"
+                        href="{{ route('surveys.index') }}">
                         <i class="nav-main-link-icon fa fa-clipboard-list"></i>
                         <span class="nav-main-link-name">Encuestas</span>
                     </a>
                 </li>
+                <li class="nav-main-heading">Accesos</li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('/surveys') ? ' active' : '' }}" href="/surveys">
+                    <a class="nav-main-link{{ request()->is('/form.index') ? ' active' : '' }}" href="{{ route('form.index') }}">
                         <i class="nav-main-link-icon fa fa-book-open-reader"></i>
-                        <span class="nav-main-link-name">Sugerencias, Reclamos y/o Felicitaciones</span>
+                        <span class="nav-main-link-name">Formularios cliente</span>
                     </a>
                 </li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="{{route('users.index')}}">
-                        <i class="nav-main-link-icon fa fa-user-group"></i>
-                        <span class="nav-main-link-name">Administración de Usuarios</span>
-                    </a>
-                </li>
+
             </ul>
         </div>
         <!-- END Side Navigation -->
