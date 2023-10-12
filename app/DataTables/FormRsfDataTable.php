@@ -78,7 +78,7 @@ class FormRsfDataTable extends DataTable
                     ->minifiedAjax()
                     ->language('//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json')
                     //->dom('Bfrtip')
-                    ->orderBy(1)
+                    ->orderBy(0)
                     ->buttons([
                         Button::make('excel'),
                         // Button::make('csv'),
