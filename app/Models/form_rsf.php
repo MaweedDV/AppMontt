@@ -19,6 +19,7 @@ class form_rsf extends Model
         'place_job',
         'type_procedure',
         'area_attention',
+        'subject',
         'observation'
     ];
 

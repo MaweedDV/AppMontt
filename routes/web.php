@@ -39,6 +39,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
             Route::get('/create', [FormRsfController::class, 'create'])->name('rsf.create');
             Route::post('/', [FormRsfController::class, 'store'])->name('rsf.store');
             Route::delete('/{id}', [FormRsfController::class, 'destroy'])->name('rsf.destroy');
+            Route::get('/{id}', [FormRsfController::class, 'show'])->name('rsf.show');
         });
     });
 

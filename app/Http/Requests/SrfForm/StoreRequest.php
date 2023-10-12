@@ -31,7 +31,8 @@ class StoreRequest extends FormRequest
             'place_job' => ['required'],
             'type_procedure' => ['required'],
             'area_attention' => ['required'],
-            'observation' => ['required', 'max:350']
+            'subject' => ['required'],
+            'observation' => ['required', 'max:1000'],
         ];
     }
 }

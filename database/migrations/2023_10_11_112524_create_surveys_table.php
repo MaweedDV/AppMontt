@@ -40,13 +40,13 @@ return new class extends Migration
             $table->string('q16');
             $table->integer('a16');
             $table->string('q17');
-            $table->integer('a17');
+            $table->string('a17');
             $table->string('q18');
-            $table->integer('a18');
+            $table->longText('a18')->nullable();
             $table->string('q19');
-            $table->string('a19');
+            $table->integer('a19');
             $table->string('q20');
-            $table->longText('a20')->nullable();
+            $table->integer('a20');
             $table->string('q21');
             $table->integer('a21');
             $table->string('q22');
@@ -54,9 +54,7 @@ return new class extends Migration
             $table->string('q23');
             $table->integer('a23');
             $table->string('q24');
-            $table->integer('a24');
-            $table->string('q25');
-            $table->longText('a25')->nullable();
+            $table->longText('a24')->nullable();
             $table->timestamps();
         });
     }

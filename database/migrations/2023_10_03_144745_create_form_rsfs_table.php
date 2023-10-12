@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('place_job');
             $table->string('type_procedure');
             $table->string('area_attention');
+            $table->string('subject');
             $table->longText('observation');
             $table->timestamps();
         });
