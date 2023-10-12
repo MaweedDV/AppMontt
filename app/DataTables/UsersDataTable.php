@@ -55,8 +55,7 @@ class UsersDataTable extends DataTable
                 });
             });
             </script>
-            </div>')
-            ;
+            </div>');
     }
 
     /**
@@ -64,7 +63,7 @@ class UsersDataTable extends DataTable
      */
     public function query(User $model): QueryBuilder
     {
-        return $model->newQuery()->select('id', 'name', 'role', 'email', 'id_places');
+        return $model->newQuery()->with(['departament', 'place']);
     }
 
     /**
@@ -97,10 +96,12 @@ class UsersDataTable extends DataTable
         return [
 
             Column::make('id')->title('#')->width(100),
-            Column::make('name')->title('Nombre'),
+            Column::make('first_name')->title('Nombre'),
+            Column::make('last_name')->title('Apellido'),
+            Column::make('rut')->title('Rut'),
             Column::make('role')->title('Rol'),
             Column::make('email')->title('Correo Electronico'),
-            Column::make('id_places')->title('Lugar'),
+            Column::make('departament.name')->title('Departamento'),
             Column::computed('action')
                 ->title('')
                   ->exportable(false)

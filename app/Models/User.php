@@ -18,7 +18,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
+        'rut',
+        'department_id',
+        'profile_photo_path',
         'role',
         'email',
         'id_places',
@@ -28,6 +32,11 @@ class User extends Authenticatable
     public function place()
     {
         return $this->belongsTo(Place::class);
+    }
+
+    public function departament()
+    {
+        return $this->belongsTo(Department::class);
     }
 
 

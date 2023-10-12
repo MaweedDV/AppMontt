@@ -185,5 +185,6 @@ return [
         'surname'               => 'apellido',
         'customer_id'           => 'cliente',
         'id_places'              => 'direccion de trabajo',
+        'department_id'         => 'departamento',
     ],
 ];

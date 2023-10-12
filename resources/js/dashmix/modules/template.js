@@ -16,7 +16,8 @@ import swal from "sweetalert2";
 window.Swal = swal;
 
 // Import Select2
-import "select2";
+import select2 from "select2";
+window.Select2 = select2;
 
 // Assignments
 window.bootstrap = bootstrap;
