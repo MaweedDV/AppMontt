@@ -63,7 +63,7 @@ class UsersDataTable extends DataTable
      */
     public function query(User $model): QueryBuilder
     {
-        return $model->newQuery()->with(['departament', 'place']);
+        return $model->with(['department', 'place'])->newQuery();
     }
 
     /**
@@ -101,7 +101,8 @@ class UsersDataTable extends DataTable
             Column::make('rut')->title('Rut'),
             Column::make('role')->title('Rol'),
             Column::make('email')->title('Correo Electronico'),
-            Column::make('departament.name')->title('Departamento'),
+            Column::make('department_id')->title('Departamento')->data('department.name'),
+            Column::make('id_places')->title('Lugar')->data('place.description'),
             Column::computed('action')
                 ->title('')
                   ->exportable(false)

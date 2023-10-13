@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd7d73fbf863b20d549c15334c3e15cb",
+    "content-hash": "b73536929466d400f3e7a369e46ddbe1",
     "packages": [
         {
             "name": "apalfrey/select2-bootstrap-5-theme",
@@ -1037,6 +1037,68 @@
                 "source": "https://github.com/ezyang/htmlpurifier/tree/v4.16.0"
             },
             "time": "2022-09-18T07:06:19+00:00"
+        },
+        {
+            "name": "freshwork/chilean-bundle",
+            "version": "2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/freshworkstudio/ChileanBundle.git",
+                "reference": "2b4ee46294af19829d56ad9dff35082d2b29f92b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/freshworkstudio/ChileanBundle/zipball/2b4ee46294af19829d56ad9dff35082d2b29f92b",
+                "reference": "2b4ee46294af19829d56ad9dff35082d2b29f92b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "^2.1",
+                "codeception/specify": "^0.4.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Freshwork\\ChileanBundle\\Laravel\\ChileanBundleServiceProvider"
+                    ],
+                    "aliases": {
+                        "Rut": "Freshwork\\ChileanBundle\\Facades\\Rut"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Freshwork\\ChileanBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gonzalo De Spirito | Freshwork Studio Chile",
+                    "email": "gonzalo@freshworkstudio.com"
+                }
+            ],
+            "description": "A PHP composer package with Chilean validations, common variables, etc. (RUT, IVA, ETC). Ready for Laravel 5. Grande chile ctm :)",
+            "keywords": [
+                "chile",
+                "freshwork",
+                "laravel",
+                "rut",
+                "tools",
+                "validation"
+            ],
+            "support": {
+                "issues": "https://github.com/freshworkstudio/ChileanBundle/issues",
+                "source": "https://github.com/freshworkstudio/ChileanBundle/tree/2.1.4"
+            },
+            "time": "2023-01-03T19:23:49+00:00"
         },
         {
             "name": "fruitcake/php-cors",

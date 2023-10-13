@@ -21,30 +21,32 @@ class UserController extends Controller
 
     public function create()
     {
-       $places = Place::all();
-       $departments = Department::all();
+       $places = Place::select('id', 'description')->get();
+       $departments = Department::select('id', 'name')->get();
 
         return view('backend.sections.users.create', compact('places', 'departments'));
     }
 
     public function store(StoreRequest $request)
     {
-        $profile_photo_path = $request->file('profile_photo_path');
-
-        $imageName = 'media/profile-photos/' . time() . $profile_photo_path->getClientOriginalName();
-        Storage::disk('public')->put($imageName, file_get_contents($profile_photo_path));
-
-        User::create([
+        $user = User::create([
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
             'rut' => $request->get('rut'),
             'department' => $request->get('department'),
-            'profile_photo_path' => $imageName,
             'email' => $request->get('email'),
             'role' => $request->get('role'),
             'id_places' => $request->get('id_places'),
             'password' => bcrypt($request->get('password')),
         ]);
+
+        if ($request->has('profile_photo_path')) {
+            $profile_photo_path = $request->file('profile_photo_path');
+            $imageName = 'media/profile-photos/' . time() . $profile_photo_path->getClientOriginalName();
+            Storage::disk('public')->put($imageName, file_get_contents($profile_photo_path));
+            $user->profile_photo_path = $imageName;
+            $user->save();
+        }
 
         return redirect()->route('users.index')->with('success', 'Usuario creado correctamente');
     }
@@ -59,8 +61,8 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $user = User::find($id);
-        $places = Place::all();
-        $departments = Department::all();
+        $places = Place::select('id', 'description')->get();
+        $departments = Department::select('id', 'name')->get();
 
         return view('backend.sections.users.edit', compact('user', 'places', 'departments'));
     }
@@ -69,27 +71,29 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        if($request->file('profile_photo_path')){
-            $profile_photo_path = $request->file('profile_photo_path');
-
-            $imageName = 'media/profile-photos/' . time() . $profile_photo_path->getClientOriginalName();
-            Storage::disk('public')->put($imageName, file_get_contents($profile_photo_path));
-        }
-
         $user->update([
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
             'rut' => $request->get('rut'),
             'department' => $request->get('department'),
-            'profile_photo_path' => $imageName,
             'email' => $request->get('email'),
             'role' => $request->get('role'),
             'id_places' => $request->get('id_places'),
         ]);
 
-        if($request->get('password')){
+        if ($request->get('password')){
             $user->update([
                 'password' => bcrypt($request->get('password'))
+            ]);
+        }
+
+        if ($request->has('profile_photo_path')){
+            $profile_photo_path = $request->file('profile_photo_path');
+
+            $imageName = 'media/profile-photos/' . time() . $profile_photo_path->getClientOriginalName();
+            Storage::disk('public')->put($imageName, file_get_contents($profile_photo_path));
+            $user->update([
+                'profile_photo_path' => $imageName
             ]);
         }
 

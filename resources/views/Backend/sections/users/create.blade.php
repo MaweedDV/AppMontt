@@ -64,7 +64,7 @@
                         <label for="lblRole" class="form-label">Rol</label>
                         <select class="form-control form-control-alt @error('role') is-invalid @enderror" id="role"
                             name="role">
-                            <option selected>Seleccione una opción</option>
+                            <option value="" selected>Seleccione una opción</option>
                             <option {{ old('role') == 'admin' ? 'selected' : '' }} value="admin">admin</option>
                             <option {{ old('role') == 'customer' ? 'selected' : '' }} value="customer">customer</option>
                         </select>
@@ -73,20 +73,23 @@
                         @enderror
                     </div>
                     <div class="col-md-6">
-                        <label for="department_id" class="form-label ">Departamento</label>
-                        <input type="text"
-                            class="form-control form-control-alt @error('department_id') is-invalid @enderror"
-                            id="department_id" name="department_id" value="{{ old('department_id') }}"
-                            placeholder="Ingrese departamento">
+                        <label for="department_id" class="form-label">Departamento</label>
+                        <select class="form-control form-control-alt @error('department_id') is-invalid @enderror"
+                            id="department_id" name="department_id" value="{{ old('department_id') }}">
+                            <option value="" selected>Seleccione una opción</option>
+                            @foreach ($departments as $department)
+                                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                            @endforeach
+                        </select>
                         @error('department_id')
                             <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="col-md-6">
-                        <label for="lblPlaces" class="form-label">Dirección de Trabajo</label>
+                        <label for="id_places" class="form-label">Dirección de Trabajo</label>
                         <select class="form-control form-control-alt @error('id_places') is-invalid @enderror"
                             id="id_places" name="id_places" value="{{ old('id_places') }}">
-                            <option selected>Seleccione una opción</option>
+                            <option value="" selected>Seleccione una opción</option>
                             @foreach ($places as $place)
                                 <option value="{{ $place->id }}">{{ $place->description }}</option>
                             @endforeach

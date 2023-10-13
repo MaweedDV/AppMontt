@@ -29,16 +29,15 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'department_id');
+    }
+
     public function place()
     {
-        return $this->belongsTo(Place::class);
+        return $this->belongsTo(Place::class, 'id_places');
     }
-
-    public function departament()
-    {
-        return $this->belongsTo(Department::class);
-    }
-
 
     /**
      * The attributes that should be hidden for serialization.

@@ -10,7 +10,7 @@
                 <button type="button" class="btn btn-alt-secondary" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="img-avatar img-avatar32 img-avatar-thumb"
-                        src="{{ Auth::user()->profile_photo_url == '' ? asset('media/profile-photos/default_image.png') : Storage::url(Auth::user()->profile_photo_path) }}"
+                        src="{{ auth()->user()->profile_photo_path ? Storage::url(auth()->user()->profile_photo_path) : asset('media/profile-photos/default_image.png') }}"
                         alt="">
                     <i class="fa fa-fw fa-user d-sm-none"></i>
                     <span class="d-none d-sm-inline-block">{{ Auth::user()->first_name }}
