@@ -43,6 +43,7 @@ class FormRsfControllerFront extends Controller
             'place_job' => $request->get('place_job'),
             'type_procedure' => $request->get('type_procedure'),
             'area_attention' => $request->get('area_attention'),
+            'subject' => $request->get('subject'),
             'observation' => $request->get('observation'),
         ]);
 
