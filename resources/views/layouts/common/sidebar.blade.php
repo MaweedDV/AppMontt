@@ -2,9 +2,6 @@
     <div class="bg-header-dark">
         <div class="content-header bg-white-5">
             <a class="fw-semibold text-white tracking-wide" href="/admin/dashboard">
-                <span class="smini-visible">
-                    Pers<span class="opacity-75">onal</span>
-                </span>
                 <span class="smini-hidden">
                     APP<span class="opacity-75"> MONTT</span>
                 </span>
@@ -23,7 +20,6 @@
         </div>
     </div>
     <div class="js-sidebar-scroll">
-        <!-- Side Navigation -->
         <div class="content-side content-side-full">
             <ul class="nav-main">
                 <li class="nav-main-item">
@@ -64,10 +60,7 @@
                         <span class="nav-main-link-name">Formularios cliente</span>
                     </a>
                 </li>
-
             </ul>
         </div>
-        <!-- END Side Navigation -->
     </div>
-    <!-- END Sidebar Scrolling -->
 </nav>

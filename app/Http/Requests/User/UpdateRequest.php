@@ -23,10 +23,13 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'min:5', 'max:50'],
+            'first_name' => ['required', 'max:255'],
+            'last_name' => ['required', 'max:255'],
             'email' => ['required', 'email', Rule::unique('users', 'email')->ignore($this->id)],
+            'rut' => ['required', 'cl_rut', Rule::unique('users', 'rut')->ignore($this->id)],
+            'department_id' => ['required'],
             'role' => ['required'],
-            'txtPlace' => ['nullable'],
+            'id_places' => ['required'],
             'password' => ['nullable', 'confirmed', 'min:8', 'max:50'],
             'password_confirmation' => ['nullable']
         ];
