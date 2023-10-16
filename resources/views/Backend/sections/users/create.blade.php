@@ -99,7 +99,7 @@
                         @enderror
                     </div>
                     {{-- profile_photo_path --}}
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <label for="lblProfilePhoto" class="form-label">Foto de Perfil</label>
                         <input type="file"
                             class="form-control form-control-alt @error('profile_photo_path') is-invalid @enderror"

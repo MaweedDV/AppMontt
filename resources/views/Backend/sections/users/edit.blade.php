@@ -143,11 +143,17 @@
                         @enderror
                     </div>
                     <div class="col-md-6">
-                        <label for="department_id" class="form-label ">Departamento</label>
-                        <input type="text"
-                            class="form-control form-control-alt @error('department_id') is-invalid @enderror"
-                            id="department_id" name="department_id" value="{{ old('deparment_id', $user->deparment_id) }}"
-                            placeholder="Ingrese departamento">
+                        <label for="department_id" class="form-label">Departamento</label>
+                        <select class="form-control form-control-alt @error('department_id') is-invalid @enderror"
+                            id="department_id" name="department_id" value="{{ old('department_id') }}">
+                            <option value="">
+                                Seleccione una opción</option>
+                            @foreach ($departments as $department)
+                                <option value="{{ $department->id }}"
+                                    {{ old('department_id', $user->department_id) == $department->id ? 'selected' : '' }}>
+                                    {{ $department->name }}</option>
+                            @endforeach
+                        </select>
                         @error('department_id')
                             <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                         @enderror
@@ -156,9 +162,11 @@
                         <label for="lblPlaces" class="form-label">Dirección de Trabajo</label>
                         <select class="form-control form-control-alt @error('id_places') is-invalid @enderror"
                             id="id_places" name="id_places" value="{{ old('id_places') }}">
-                            <option selected>Seleccione una opción</option>
+                            <option value="">Seleccione una opción</option>
                             @foreach ($places as $place)
-                                <option value="{{ $place->id }}">{{ $place->description }}</option>
+                                <option value="{{ $place->id }}"
+                                    {{ old('id_places', $user->id_places) == $place->id ? 'selected' : '' }}>
+                                    {{ $place->description }}</option>
                             @endforeach
                         </select>
                         @error('id_places')
@@ -166,7 +174,7 @@
                         @enderror
                     </div>
                     {{-- profile_photo_path --}}
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <label for="lblProfilePhoto" class="form-label">Foto de Perfil</label>
                         <input type="file"
                             class="form-control form-control-alt @error('profile_photo_path') is-invalid @enderror"
