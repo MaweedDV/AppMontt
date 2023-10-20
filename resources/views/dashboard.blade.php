@@ -21,7 +21,7 @@
         <div class="row items-push">
 
             <div class="col-md-12">
-                <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
+                <a class="block block-rounded block-link-shadow" href="">
                   <div class="block-content block-content-full">
                     <div class="row text-center">
                       <div class="col-4 border-end">
@@ -67,9 +67,30 @@
                   </div>
                 </a>
               </div>
+              <h3>Satisfacción encuestas</h3>
+              <div class="col-md-6 col-xl-4">
+                  <a class="block block-rounded block-link-shadow {{$colorBox}}" href="{{route('dashboard_detail.index')}}">
+                      <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                          <div class="me-3">
+                              <p class="text-white fs-3 fw-medium mb-0">
+                                  {{round($promedio_encuestas, 1)}}
+                              </p>
+                              <p class="text-white-75 mb-0">
+                                  Nota Promedio
+                              </p>
+                          </div>
+                          <div class="text-center">
+                            <p class="text-white fs-3 fw-medium mb-0">
+                                Ver Detalle
+                            </p>
+                              <i class="fa fa-2x fa-arrow-right text-black-50"></i>
+                          </div>
+                      </div>
+                  </a>
+              </div>
             <h3>Reclamos, Sugerencias y Felicitaciones</h3>
             <div class="col-md-6 col-xl-4">
-                <a class="block block-rounded block-link-shadow bg-success" href="javascript:void(0)">
+                <a class="block block-rounded block-link-shadow bg-success" href="">
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
@@ -89,7 +110,7 @@
                 </a>
             </div>
             <div class="col-md-6 col-xl-4">
-                <a class="block block-rounded block-link-shadow bg-warning" href="javascript:void(0)">
+                <a class="block block-rounded block-link-shadow bg-warning" href="">
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
@@ -109,7 +130,7 @@
                 </a>
             </div>
             <div class="col-md-6 col-xl-4">
-                <a class="block block-rounded block-link-shadow bg-danger" href="javascript:void(0)">
+                <a class="block block-rounded block-link-shadow bg-danger" href="">
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
@@ -120,59 +141,6 @@
                             </p>
                             <p class="text-white fs-3 fw-medium mb-0">
                                 {{$reclamos_porcent}}%
-                            </p>
-                        </div>
-                        <div>
-                            <i class="fa fa-2x fa-circle-xmark text-black-50"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <h3>Satisfacción encuestas</h3>
-            <div class="col-md-6 col-xl-4">
-                <a class="block block-rounded block-link-shadow bg-success" href="javascript:void(0)">
-                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                        <div class="me-3">
-                            <p class="text-white fs-3 fw-medium mb-0">
-                                {{round($satisfaccion_max_porcent)}}%
-                            </p>
-                            <p class="text-white-75 mb-0">
-                                Muy satisfactorio
-                            </p>
-                        </div>
-                        <div>
-                            <i class="fa fa-2x fa-circle-check text-black-50"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-xl-4">
-                <a class="block block-rounded block-link-shadow bg-warning" href="javascript:void(0)">
-                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                        <div class="me-3">
-                            <p class="text-white fs-3 fw-medium mb-0">
-                                {{round($satisfaccion_med_porcent)}}%
-                            </p>
-                            <p class="text-white-75 mb-0">
-                                Medianamente satisfactorio
-                            </p>
-                        </div>
-                        <div>
-                            <i class="fa fa-2x fa-envelope-open-text text-black-50"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-xl-4">
-                <a class="block block-rounded block-link-shadow bg-danger" href="javascript:void(0)">
-                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                        <div class="me-3">
-                            <p class="text-white fs-3 fw-medium mb-0">
-                                {{round($satisfaccion_min_porcent)}}%
-                            </p>
-                            <p class="text-white-75 mb-0">
-                                Muy insatisfactorio
                             </p>
                         </div>
                         <div>

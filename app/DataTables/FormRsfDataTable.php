@@ -79,6 +79,7 @@ class FormRsfDataTable extends DataTable
                     ->language('//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json')
                     //->dom('Bfrtip')
                     ->orderBy(0)
+                    ->responsive(true)
                     ->buttons([
                         Button::make('excel'),
                         // Button::make('csv'),

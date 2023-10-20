@@ -135,7 +135,7 @@
                   <div class="content py-6">
                       <label class="form-label" for="example-textarea-input-alt">Observación:</label>
                       <textarea class="form-control form-control-alt @error('observation') is-invalid
-                    @enderror" id="observation" name="observation" style="height: 100px" maxlength="5" value="{{ old('observation') }}" placeholder="Escriba aquí"></textarea>
+                    @enderror" id="observation" name="observation" style="height: 100px" maxlength="500" value="{{ old('observation') }}" placeholder="Escriba aquí"></textarea>
                     @error('observation')
                       <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                     @enderror
