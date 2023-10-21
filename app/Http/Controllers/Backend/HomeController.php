@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Charts\MantainersCountChart;
 use App\Http\Controllers\Controller;
 use App\Models\form_rsf;
 use App\Models\Survey;
@@ -10,7 +11,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index(MantainersCountChart $MantainersCountChart){
         //contadores
         $sugerencias_count = form_rsf::where('type_procedure', 'Sugerencia')->count();
         $reclamos_count = form_rsf::where('type_procedure', 'Reclamo')->count();
@@ -31,7 +32,7 @@ class HomeController extends Controller
 
         return view('dashboard', compact('surveys_count', 'sugerencias_count', 'frs_count', 'reclamos_count', 'felicitaciones_count', 'users_count',
                                          'sugerencias_porcent', 'reclamos_porcent', 'felicitaciones_porcent', 'satisfaccion_min_porcent',
-                                         'satisfaccion_med_porcent','satisfaccion_max_porcent'));
+                                         'satisfaccion_med_porcent','satisfaccion_max_porcent'), ['MantainersCountChart' => $MantainersCountChart->build()]);
     }
 
     public function profile()

@@ -22,64 +22,65 @@
 
             <div class="col-md-12">
                 <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
-                  <div class="block-content block-content-full">
-                    <div class="row text-center">
-                      <div class="col-4 border-end">
-                        <div class="py-3">
-                          <div class="item item-circle bg-body-light mx-auto">
-                            <i class="fa fa-3x fa fa-clipboard-list text-primary"></i>
-                          </div>
-                          <p class="fs-3 fw-medium mt-3 mb-0">
-                            {{$surveys_count}}
-                          </p>
-                          <p class="text-muted mb-0">
-                            Encuestas completadas
-                          </p>
+                    <div class="block-content block-content-full">
+                        <div class="row text-center">
+                            <div class="col-4 border-end">
+                                <div class="py-3">
+                                    <div class="item item-circle bg-body-light mx-auto">
+                                        <i class="fa fa-3x fa fa-clipboard-list text-primary"></i>
+                                    </div>
+                                    <p class="fs-3 fw-medium mt-3 mb-0">
+                                        {{ $surveys_count }}
+                                    </p>
+                                    <p class="text-muted mb-0">
+                                        Encuestas completadas
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="col-4 border-end">
+                                <div class="py-3">
+                                    <div class="item item-circle bg-body-light mx-auto">
+                                        <i class="fa fa-3x fa fa-book-open text-primary"></i>
+                                    </div>
+                                    <p class="fs-3 fw-medium mt-3 mb-0">
+                                        {{ $frs_count }}
+                                    </p>
+                                    <p class="text-muted mb-0">
+                                        Formularios Reclamos, Sugerencias y/o Felicitaciones
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="py-3">
+                                    <div class="item item-circle bg-body-light mx-auto">
+                                        <i class="fa fa-3x fa fa-users text-primary"></i>
+                                    </div>
+                                    <p class="fs-3 fw-medium mt-3 mb-0">
+                                        {{ $users_count }}
+                                    </p>
+                                    <p class="text-muted mb-0">
+                                        Usuarios
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-4 border-end">
-                        <div class="py-3">
-                          <div class="item item-circle bg-body-light mx-auto">
-                            <i class="fa fa-3x fa fa-book-open text-primary"></i>
-                          </div>
-                          <p class="fs-3 fw-medium mt-3 mb-0">
-                            {{$frs_count}}
-                          </p>
-                          <p class="text-muted mb-0">
-                            Formularios Reclamos, Sugerencias y/o Felicitaciones
-                          </p>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="py-3">
-                          <div class="item item-circle bg-body-light mx-auto">
-                            <i class="fa fa-3x fa fa-users text-primary"></i>
-                          </div>
-                          <p class="fs-3 fw-medium mt-3 mb-0">
-                            {{$users_count}}
-                          </p>
-                          <p class="text-muted mb-0">
-                            Usuarios
-                          </p>
-                        </div>
-                      </div>
                     </div>
-                  </div>
                 </a>
-              </div>
+            </div>
             <h3>Reclamos, Sugerencias y Felicitaciones</h3>
             <div class="col-md-6 col-xl-4">
                 <a class="block block-rounded block-link-shadow bg-success" href="javascript:void(0)">
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{$felicitaciones_count}}
+                                {{ $felicitaciones_count }}
                             </p>
                             <p class="text-white-75 mb-0">
                                 FELICITACIONES
                             </p>
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{$felicitaciones_porcent}}%
+                                {{ $felicitaciones_porcent }}%
                             </p>
                         </div>
                         <div>
@@ -93,13 +94,13 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{$sugerencias_count}}
+                                {{ $sugerencias_count }}
                             </p>
                             <p class="text-white-75 mb-0">
                                 SUGERENCIAS
                             </p>
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{$sugerencias_porcent}}%
+                                {{ $sugerencias_porcent }}%
                             </p>
                         </div>
                         <div>
@@ -113,13 +114,13 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{$reclamos_count}}
+                                {{ $reclamos_count }}
                             </p>
                             <p class="text-white-75 mb-0">
                                 RECLAMOS
                             </p>
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{$reclamos_porcent}}%
+                                {{ $reclamos_porcent }}%
                             </p>
                         </div>
                         <div>
@@ -135,7 +136,7 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{round($satisfaccion_max_porcent)}}%
+                                {{ round($satisfaccion_max_porcent) }}%
                             </p>
                             <p class="text-white-75 mb-0">
                                 Muy satisfactorio
@@ -152,7 +153,7 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{round($satisfaccion_med_porcent)}}%
+                                {{ round($satisfaccion_med_porcent) }}%
                             </p>
                             <p class="text-white-75 mb-0">
                                 Medianamente satisfactorio
@@ -169,7 +170,7 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{round($satisfaccion_min_porcent)}}%
+                                {{ round($satisfaccion_min_porcent) }}%
                             </p>
                             <p class="text-white-75 mb-0">
                                 Muy insatisfactorio
@@ -181,8 +182,21 @@
                     </div>
                 </a>
             </div>
+
+            <div class="col-md-3">
+                <div class="block block-rounded block-link-shadow p-2">
+                    {!! $MantainersCountChart->container() !!}
+                </div>
+
+            </div>
         </div>
     </div>
 @endsection
 
+@section('js')
+    <script src="{{ $MantainersCountChart->cdn() }}"></script>
+@endsection
 
+@push('scripts')
+    {{ $MantainersCountChart->script() }}
+@endpush
