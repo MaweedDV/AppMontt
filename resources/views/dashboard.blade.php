@@ -94,13 +94,13 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{$felicitaciones_count}}
+                                {{round($felicitaciones_count)}}
                             </p>
                             <p class="text-white-75 mb-0">
                                 FELICITACIONES
                             </p>
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{$felicitaciones_porcent}}%
+                                {{round($felicitaciones_porcent, 1)}}%
                             </p>
                         </div>
                         <div>
@@ -120,7 +120,7 @@
                                 SUGERENCIAS
                             </p>
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{$sugerencias_porcent}}%
+                                {{round($sugerencias_porcent, 1)}}%
                             </p>
                         </div>
                         <div>
@@ -140,7 +140,7 @@
                                 RECLAMOS
                             </p>
                             <p class="text-white fs-3 fw-medium mb-0">
-                                {{$reclamos_porcent}}%
+                                {{round($reclamos_porcent, 1)}}%
                             </p>
                         </div>
                         <div>

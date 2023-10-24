@@ -11,7 +11,7 @@ class StoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -19,8 +19,16 @@ class StoreRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
+
+
+
+
     public function rules(): array
     {
+
+
+
+
         return [
             'date_attention' => ['required'],
             'juridic_quality' => ['required'],
@@ -39,13 +47,12 @@ class StoreRequest extends FormRequest
             'a15' => ['required'],
             'a16' => ['required'],
             'a17' => ['required'],
-            'q19' => ['required'],
-            'a20' => ['max:450'], //-> respuesta opcional
+            'a19' => ['required'],
+            'a20' => ['required'],
             'a21' => ['required'],
             'a22' => ['required'],
             'a23' => ['required'],
-            'a24' => ['required'],
-            'a25' => ['max:450'], //-> respuesta opcional
+            'a24' => ['max:1000'],//-> respuesta opcional
         ];
     }
 }

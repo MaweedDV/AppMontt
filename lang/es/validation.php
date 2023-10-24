@@ -96,6 +96,7 @@ return [
     'present'              => 'El campo :attribute debe estar presente.',
     'regex'                => 'El formato de :attribute es inválido.',
     'required'             => 'El campo :attribute es obligatorio.',
+    'required_question'    => 'El campo es obligatorio',
     'required_if'          => 'El campo :attribute es obligatorio cuando :other es :value.',
     'required_unless'      => 'El campo :attribute es obligatorio a menos que :other esté en :values.',
     'required_with'        => 'El campo :attribute es obligatorio cuando :values está presente.',
@@ -135,6 +136,7 @@ return [
         'email' => [
             'unique' => 'El :attribute ya ha sido registrado.',
         ],
+
     ],
 
     /*
@@ -184,7 +186,16 @@ return [
         'image'                 => 'imagen',
         'surname'               => 'apellido',
         'customer_id'           => 'cliente',
-        'id_places'              => 'direccion de trabajo',
+        'id_places'             => 'direccion de trabajo',
         'department_id'         => 'departamento',
+        'date_attention'        => 'fecha de atención',
+        'juridic_quality'       => 'calidad jurídica',
+        'escale'                => 'escalafón',
+        'age_range'             => 'rango de edad',
+        'genre'                 => 'genero',
+        'years_antiquity'       => 'años de antigüedad',
+        'place_job'             => 'lugar de trabajo',
+        'a9'                    => 'N°9',
+        'a17'                   => 'N°17'
     ],
 ];
