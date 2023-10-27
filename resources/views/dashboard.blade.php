@@ -19,7 +19,26 @@
     </div>
     <div class="content">
         <div class="row items-push">
-
+            <div class="col-md-4">
+                <div class="block block-rounded block-link-shadow">
+                    <div class="block-content block-content-full">
+                        <p>
+                            <strong>Reclamos, Sugerencias y Felicitaciones</strong>
+                        </p>
+                        {!! $FormRsfChart->container() !!}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="block block-rounded block-link-shadow">
+                    <div class="block-content block-content-full">
+                        <p>
+                            <strong>General</strong>
+                        </p>
+                        {!! $MantainersCountChart->container() !!}
+                    </div>
+                </div>
+            </div>
             <div class="col-md-12">
                 <a class="block block-rounded block-link-shadow" href="javascript:void(0)">
                     <div class="block-content block-content-full">
@@ -129,7 +148,6 @@
                     </div>
                 </a>
             </div>
-
             <h3>Satisfacción encuestas</h3>
             <div class="col-md-6 col-xl-4">
                 <a class="block block-rounded block-link-shadow bg-success" href="javascript:void(0)">
@@ -182,21 +200,16 @@
                     </div>
                 </a>
             </div>
-
-            <div class="col-md-3">
-                <div class="block block-rounded block-link-shadow p-2">
-                    {!! $MantainersCountChart->container() !!}
-                </div>
-
-            </div>
         </div>
     </div>
 @endsection
 
 @section('js')
     <script src="{{ $MantainersCountChart->cdn() }}"></script>
+    <script src="{{ $FormRsfChart->cdn() }}"></script>
 @endsection
 
 @push('scripts')
     {{ $MantainersCountChart->script() }}
+    {{ $FormRsfChart->script() }}
 @endpush

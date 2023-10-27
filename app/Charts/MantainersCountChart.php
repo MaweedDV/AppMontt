@@ -18,13 +18,14 @@ class MantainersCountChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\PieChart
     {
-        $departmentsNames = Department::pluck('name');
-        // dd('hola', $departmentsNames);
+        $departments = Department::count();
+        $users = User::count();
+        $work_places = Place::count();
 
         return $this->chart->pieChart()
-            ->setTitle('Mantenedores')
+            ->setTitle('')
             // ->setSubtitle('Season 2021.')
-            ->addData([User::count(), Department::count(), Place::count()])
+            ->addData([$users, $departments, $work_places])
             ->setLabels(['Usuarios', 'Departamentos', 'Lugares de trabajo']);
     }
 }

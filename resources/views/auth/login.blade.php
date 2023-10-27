@@ -67,18 +67,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div
-                                        class="d-sm-flex justify-content-sm-between align-items-sm-center text-center text-sm-start mb-4">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="login-remember-me"
-                                                name="login-remember-me" checked />
-                                            <label class="form-check-label" for="login-remember-me">Recuerdame
-                                            </label>
-                                        </div>
-                                        <div class="fw-semibold fs-sm py-1">
-                                            <a href="#">¿Olvidaste tu contraseña?</a>
-                                        </div>
-                                    </div>
+
                                     <div class="text-center mb-4">
                                         <button type="submit" class="btn btn-hero btn-primary">
                                             <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i>

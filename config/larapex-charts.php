@@ -13,7 +13,7 @@ return [
 
     'font_family' => 'Helvetica, Arial, sans-serif',
 
-    'font_color' => '#373d3f',
+    'font_color' => '#373d3f, #3',
 
     /*
     |--------------------------------------------------------------------------
