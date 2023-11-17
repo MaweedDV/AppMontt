@@ -28,13 +28,13 @@
                 </a>
             </div>
             <div class="block-content block-content-full col-md-12 col-xl-12">
-                {{-- {{ $dataTable->table() }} --}}
+                {{ $dataTable->table() }}
             </div>
         </div>
     </div>
 @endsection
 
 
-{{-- @push('scripts')
+@push('scripts')
     {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-@endpush --}}
+@endpush

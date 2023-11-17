@@ -2,8 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Place;
-use App\Models\User;
+use App\Models\Survey;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -13,7 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class UsersDataTable extends DataTable
+class SurveysDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
@@ -25,9 +24,8 @@ class UsersDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->setRowId('id')
             ->addColumn('action', '<div>
-            <a href="{{ route(\'users.show\', $id) }}" class="btn btn-sm btn-alt-secondary" title="Ver"><i class="fa fa-eye"></i></a>
-            <a href="{{ route(\'users.edit\', $id) }}" class="btn btn-sm btn-alt-primary" title="Editar"><i class="fa fa-edit"></i></a>
-            <form action="{{ route(\'users.destroy\', $id) }}" method="POST" style="display: inline-block;">
+            <a href="{{ route(\'surveys.show\', $id) }}" class="btn btn-sm btn-alt-secondary" title="Ver"><i class="fa fa-eye"></i></a>
+            <form action="{{ route(\'form_rsf.destroy\', $id) }}" method="POST" style="display: inline-block;">
                 @csrf
                 @method(\'DELETE\')
                 <button type="submit" class="btn btn-sm btn-alt-danger" title="Eliminar"><i class="fa fa-trash"></i></button>
@@ -56,15 +54,17 @@ class UsersDataTable extends DataTable
                 });
             });
             </script>
+
             </div>');
+
     }
 
     /**
      * Get the query source of dataTable.
      */
-    public function query(User $model): QueryBuilder
+    public function query(Survey $model): QueryBuilder
     {
-        return $model->with(['department', 'place'])->newQuery();
+        return $model->newQuery();
     }
 
     /**
@@ -73,18 +73,19 @@ class UsersDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('users-table')
+                    ->setTableId('surveys-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->language('//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json')
                     //->dom('Bfrtip')
                     ->orderBy(0)
+                    ->responsive(true)
                     ->buttons([
                         Button::make('excel'),
-                        //Button::make('csv'),
-                        //Button::make('pdf'),
-                        //Button::make('print'),
-                        //Button::make('reset'),
+                        // Button::make('csv'),
+                        // Button::make('pdf'),
+                        // Button::make('print'),
+                        // Button::make('reset'),
                         Button::make('reload')
                     ]);
     }
@@ -94,24 +95,21 @@ class UsersDataTable extends DataTable
      */
     public function getColumns(): array
     {
-
-
         return [
 
-            Column::make('id')->title('#')->width(100),
-            Column::make('first_name')->title('Nombre'),
-            Column::make('last_name')->title('Apellido'),
-            Column::make('rut')->title('Rut'),
-            Column::make('role')->title('Rol'),
-            Column::make('email')->title('Correo Electronico'),
-            Column::make('department_id')->title('Departamento')->data('department.name'),
-            Column::make('id_places')->title('Lugar')->data('place.description'),
+            Column::make('id')->title('#')->width(50),
+            Column::make('name_survey')->title('Nombre Encuesta'),
+            Column::make('date_attention')->title('Fecha de Atención'),
+            Column::make('a8')->title('Área evaluada'),
+            Column::make('a9')->title('Motivo'),
+            Column::make('escale')->title('Escalafón'),
+            Column::make('juridic_quality')->title('Calidad Jurídica'),
             Column::computed('action')
                 ->title('')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(150)
-                  ->addClass('text-center')
+                ->exportable(false)
+                ->printable(false)
+                ->width(150)
+                ->addClass('text-center'),
         ];
     }
 
@@ -120,6 +118,6 @@ class UsersDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Users_' . date('YmdHis');
+        return 'Surveys_' . date('YmdHis');
     }
 }

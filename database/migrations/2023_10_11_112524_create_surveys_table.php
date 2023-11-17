@@ -38,11 +38,11 @@ return new class extends Migration
             $table->string('q15');
             $table->integer('a15');
             $table->string('q16');
-            $table->integer('a16');
+            $table->string('a16');
             $table->string('q17');
-            $table->string('a17');
+            $table->longText('a17')->nullable();
             $table->string('q18');
-            $table->longText('a18')->nullable();
+            $table->integer('a18');
             $table->string('q19');
             $table->integer('a19');
             $table->string('q20');
@@ -52,9 +52,7 @@ return new class extends Migration
             $table->string('q22');
             $table->integer('a22');
             $table->string('q23');
-            $table->integer('a23');
-            $table->string('q24');
-            $table->longText('a24')->nullable();
+            $table->longText('a23')->nullable();
             $table->timestamps();
         });
     }

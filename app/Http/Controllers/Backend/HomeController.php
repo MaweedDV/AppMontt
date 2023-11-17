@@ -18,11 +18,11 @@ class HomeController extends Controller
         $surveys_count = Survey::count();
         $frs_count = form_rsf::count();
         $users_count = User::count();
-        $satisfaccion_min = Survey::where('a23', '<=', '3' )->count();
-        $satisfaccion_med = Survey::where('a23', '>', '3' )->where('a23',  '<=', '5')->count();
-        $satisfaccion_max = Survey::where('a23', '>', '5' )->count();
+        $satisfaccion_min = Survey::where('a22', '<=', '3' )->count();
+        $satisfaccion_med = Survey::where('a22', '>', '3' )->where('a22',  '<=', '5')->count();
+        $satisfaccion_max = Survey::where('a22', '>', '5' )->count();
 
-        $promedio_encuestas = Survey::select('a23')->get()->sum('a23') / Survey::count();
+        $promedio_encuestas = Survey::select('a22')->get()->sum('a22') / Survey::count();
 
 
         //porcentuales

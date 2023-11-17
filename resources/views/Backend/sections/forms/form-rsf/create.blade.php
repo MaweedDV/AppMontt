@@ -87,11 +87,11 @@
                 </div>
               <div class="col-md-4">
                 <label for="lblPlace" class="form-label">Dirección o Unidad en que Trabaja:</label>
-                <select class="form-control form-control-alt  @error('place_job') is-invalid
-                @enderror" id="place_job" name="place_job" value="{{ old('place_job') }}">
-                  <option selected="">Seleccione una opción</option>
+                <select class="form-control form-control-alt  @error('place_job') is-invalid @enderror"
+                 id="place_job" name="place_job" value="{{ old('place_job') }}">
+                  <option value="" selected>Seleccione una opción</option>
                 @foreach ($places as $place)
-                    <option value="{{$place->description}}">{{$place->description}}</option>
+                    <option {{ old('place_job') == $place->description ? 'selected' : '' }} value="{{$place->description}}">{{$place->description}}</option>
                 @endforeach
                 </select>
                 @error('place_job')

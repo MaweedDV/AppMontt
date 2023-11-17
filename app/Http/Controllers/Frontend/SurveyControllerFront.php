@@ -44,15 +44,17 @@ class SurveyControllerFront extends Controller
         $q13 = "El funcionario de Personal se expresa con claridad y me entrega la información adecuada";
         $q14 = "El tiempo total de espera, desde el momento en que llegué hasta que fuí atendido, fué adecuado";
         $q15 = "El funcionario del departamento de Personal, domina la materia relacionada con mi trámite o gestión";
-        $q16 = "El funcionario de Personal que me atendió, es confiable";
-        $q17 = "Siente que sufrió algún tipo de discriminación de cualquier tipo. (Político, religioso, de genero, físico, etc.)";
-        $q18 = "Si su respuesta anterior fue SI, indique por que motivo se sintió discriminado";
-        $q19 = "El Área de Personal es confiable";
-        $q20 = "El Área de Personal es eficiente";
-        $q21 = "El Área de Personal es cercana";
-        $q22 = "En relación a la solución de su trámite o gestión, ¿fué solucionado satisfactoriamente?";
-        $q23 = "En general, considerando todas las variables anteriores, y a todas las secciones y áreas en una escala de 1 a 7, cuan satisfactoria fue la visita realizada";
-        $q24 = "Por último, tiene algún comentario respecto a la última visita realizada al Departamento de Personal y/o a Subdirección de Personal, que nos ayude al mejorar";
+
+        //$q16 = "El funcionario de Personal que me atendió, es confiable";
+        $q16 = "Siente que sufrió algún tipo de discriminación de cualquier tipo. (Político, religioso, de genero, físico, etc.)";
+        $q17 = "Si su respuesta anterior fue SI, indique por que motivo se sintió discriminado";
+        $q18 = "El Área de Personal es confiable";
+        $q19 = "El Área de Personal es eficiente";
+        $q20 = "El Área de Personal es cercana";
+        $q21 = "En relación a la solución de su trámite o gestión, ¿fué solucionado satisfactoriamente?";
+        $q22 = "En general, considerando todas las variables anteriores, y a todas las secciones y áreas en una escala de 1 a 7, cuan satisfactoria fue la visita realizada";
+        $q23 = "Por último, tiene algún comentario respecto a la última visita realizada al Departamento de Personal y/o a Subdirección de Personal, que nos ayude al mejorar";
+        //$q24 = "";
 
 
 
@@ -97,8 +99,9 @@ class SurveyControllerFront extends Controller
             'a22' => $request->get('a22'),
             'q23' => $q23,
             'a23' => $request->get('a23'),
-            'q24' => $q24,
-            'a24' => $request->get('a24'),
+
+            // 'q24' => $q24,
+            // 'a24' => $request->get('a24'),
         ]);
 
         return redirect()->route('form.index')->with('success', 'Encuesta ingresada correctamente');

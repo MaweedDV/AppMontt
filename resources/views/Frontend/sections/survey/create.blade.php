@@ -41,12 +41,12 @@
                                     class="form-select form-control-alt @error('juridic_quality') is-invalid @enderror"
                                     id="juridic_quality" name="juridic_quality" value="{{ old('juridic_quality') }}">
                                     <option value="" selected>Seleccione una opción</option>
-                                    <option value="Planta">Planta</option>
-                                    <option value="Contrata">Contrata</option>
-                                    <option value="Código del Trabajo">Código del Trabajo</option>
-                                    <option value="Honorario">Honorario</option>
-                                    <option value="Suplencia">Suplencia</option>
-                                    <option value="Otro">Otro</option>
+                                    <option {{ old('juridic_quality') == 'Planta' ? 'selected' : '' }} value="Planta">Planta</option>
+                                    <option {{ old('juridic_quality') == 'Contrata' ? 'selected' : '' }} value="Contrata">Contrata</option>
+                                    <option {{ old('juridic_quality') == 'Código del Trabajo' ? 'selected' : '' }} value="Código del Trabajo">Código del Trabajo</option>
+                                    <option {{ old('juridic_quality') == 'Honorario' ? 'selected' : '' }} value="Honorario">Honorario</option>
+                                    <option {{ old('juridic_quality') == 'Suplencia' ? 'selected' : '' }} value="Suplencia">Suplencia</option>
+                                    <option {{ old('juridic_quality') == 'Otro' ? 'selected' : '' }} value="Otro">Otro</option>
                                     @error('juridic_quality')
                                         <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                                     @enderror
@@ -58,13 +58,13 @@
                                 @enderror"
                                     id="escale" name="escale" value="{{ old('escale') }}">
                                     <option value="" selected="">Seleccione una opción</option>
-                                    <option value="Directivo">Directivo</option>
-                                    <option value="Profesional">Profesional</option>
-                                    <option value="Jefatura">Jefatura</option>
-                                    <option value="Técnico">Técnico</option>
-                                    <option value="Administrativo">Administrativo</option>
-                                    <option value="Auxiliar">Auxiliar</option>
-                                    <option value="No Aplica">No Aplica (códigos - Honorarios - Otros)</option>
+                                    <option {{ old('escale') == 'Directivo' ? 'selected' : '' }} value="Directivo">Directivo</option>
+                                    <option {{ old('escale') == 'Profesional' ? 'selected' : '' }} value="Profesional">Profesional</option>
+                                    <option {{ old('escale') == 'Jefatura' ? 'selected' : '' }} value="Jefatura">Jefatura</option>
+                                    <option {{ old('escale') == 'Técnico' ? 'selected' : '' }} value="Técnico">Técnico</option>
+                                    <option {{ old('escale') == 'Administrativo' ? 'selected' : '' }} value="Administrativo">Administrativo</option>
+                                    <option {{ old('escale') == 'Auxiliar' ? 'selected' : '' }} value="Auxiliar">Auxiliar</option>
+                                    <option {{ old('escale') == 'No Aplica' ? 'selected' : '' }} value="No Aplica">No Aplica (códigos - Honorarios - Otros)</option>
                                     @error('escale')
                                         <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                                     @enderror
@@ -76,16 +76,16 @@
                                 @enderror"
                                     id="age_range" name="age_range" value="{{ old('age_range') }}">
                                     <option value="" selected="">Seleccione una opción</option>
-                                    <option value="Entre 18 y 25 años">Entre 18 y 25 años</option>
-                                    <option value="Entre 26 y 30 años">Entre 26 y 30 años</option>
-                                    <option value="Entre 31 y 35 años">Entre 31 y 35 años</option>
-                                    <option value="Entre 36 y 40 años">Entre 36 y 40 años</option>
-                                    <option value="Entre 41 y 45 años">Entre 41 y 45 años</option>
-                                    <option value="Entre 46 y 50 años">Entre 46 y 50 años</option>
-                                    <option value="Entre 51 y 55 años">Entre 51 y 55 años</option>
-                                    <option value="Entre 56 y 60 años">Entre 56 y 60 años</option>
-                                    <option value="Entre 61 y 65 años">Entre 61 y 65 años</option>
-                                    <option value="Más de 65 años">Más de 65 años</option>
+                                    <option {{ old('age_range') == 'Entre 18 y 25 años' ? 'selected' : '' }} value="Entre 18 y 25 años">Entre 18 y 25 años</option>
+                                    <option {{ old('age_range') == 'Entre 26 y 30 años' ? 'selected' : '' }} value="Entre 26 y 30 años">Entre 26 y 30 años</option>
+                                    <option {{ old('age_range') == 'Entre 31 y 35 años' ? 'selected' : '' }} value="Entre 31 y 35 años">Entre 31 y 35 años</option>
+                                    <option {{ old('age_range') == 'Entre 36 y 40 años' ? 'selected' : '' }} value="Entre 36 y 40 años">Entre 36 y 40 años</option>
+                                    <option {{ old('age_range') == 'Entre 41 y 45 años' ? 'selected' : '' }} value="Entre 41 y 45 años">Entre 41 y 45 años</option>
+                                    <option {{ old('age_range') == 'Entre 46 y 50 años' ? 'selected' : '' }} value="Entre 46 y 50 años">Entre 46 y 50 años</option>
+                                    <option {{ old('age_range') == 'Entre 51 y 55 años' ? 'selected' : '' }} value="Entre 51 y 55 años">Entre 51 y 55 años</option>
+                                    <option {{ old('age_range') == 'Entre 56 y 60 años' ? 'selected' : '' }} value="Entre 56 y 60 años">Entre 56 y 60 años</option>
+                                    <option {{ old('age_range') == 'Entre 61 y 65 años' ? 'selected' : '' }} value="Entre 61 y 65 años">Entre 61 y 65 años</option>
+                                    <option {{ old('age_range') == 'Más de 65 años' ? 'selected' : '' }} value="Más de 65 años">Más de 65 años</option>
                                     @error('age_range')
                                         <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                                     @enderror
@@ -97,9 +97,9 @@
                                 @enderror"
                                     id="genre" name="genre" value="{{ old('genre') }}">
                                     <option value="" selected="">Seleccione una opción</option>
-                                    <option value="Femenino">Femenino</option>
-                                    <option value="Masculino">Masculino</option>
-                                    <option value="Otro">Otro</option>
+                                    <option {{ old('genre') == 'Femenino' ? 'selected' : '' }} value="Femenino">Femenino</option>
+                                    <option {{ old('genre') == 'Masculino' ? 'selected' : '' }} value="Masculino">Masculino</option>
+                                    <option {{ old('genre') == 'Otro' ? 'selected' : '' }} value="Otro">Otro</option>
                                     @error('genre')
                                         <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                                     @enderror
@@ -111,12 +111,12 @@
                                 @enderror"
                                     id="years_antiquity" name="years_antiquity" value="{{ old('years_antiquity') }}">
                                     <option value="" selected="">Seleccione una opción</option>
-                                    <option value="Menor a 1 año">Menor a 1 año</option>
-                                    <option value="Entre 1 y 5 años">Entre 1 y 5 años</option>
-                                    <option value="Entre 6 y 10 años">Entre 6 y 10 años</option>
-                                    <option value="Entre 11 y 15 años">Entre 11 y 15 años</option>
-                                    <option value="Entre 16 y 20 años">Entre 16 y 20 años</option>
-                                    <option value="Más de 20 años">Más de 20 años</option>
+                                    <option {{ old('years_antiquity') == 'Menor a 1 año' ? 'selected' : '' }} value="Menor a 1 año">Menor a 1 año</option>
+                                    <option {{ old('years_antiquity') == 'Entre 1 y 5 años' ? 'selected' : '' }} value="Entre 1 y 5 años">Entre 1 y 5 años</option>
+                                    <option {{ old('years_antiquity') == 'Entre 6 y 10 años' ? 'selected' : '' }} value="Entre 6 y 10 años">Entre 6 y 10 años</option>
+                                    <option {{ old('years_antiquity') == 'Entre 11 y 15 años' ? 'selected' : '' }} value="Entre 11 y 15 años">Entre 11 y 15 años</option>
+                                    <option {{ old('years_antiquity') == 'Entre 16 y 20 años' ? 'selected' : '' }} value="Entre 16 y 20 años">Entre 16 y 20 años</option>
+                                    <option {{ old('years_antiquity') == 'Más de 20 años' ? 'selected' : '' }} value="Más de 20 años">Más de 20 años</option>
                                     @error('years_antiquity')
                                         <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                                     @enderror
@@ -128,37 +128,37 @@
                                 @enderror"
                                     id="place_job" name="place_job" value="{{ old('place_job') }}">
                                     <option value="" selected="">Seleccione una opción</option>
-                                    <option value="Administración Municipal">Administración Municipal (incluye Oirs,
+                                    <option {{ old('place_job') == 'Administración Municipal' ? 'selected' : '' }} value="Administración Municipal">Administración Municipal (incluye Oirs,
                                         Licitaciones)</option>
-                                    <option value="Alcaldía">Alcaldía</option>
-                                    <option value="Asesoría Jurídica">Asesoría Jurídica</option>
-                                    <option value="Dirección de Administración y Finanzas">Dirección de Administración y
+                                    <option {{ old('place_job') == 'Alcaldía' ? 'selected' : '' }} value="Alcaldía">Alcaldía</option>
+                                    <option {{ old('place_job') == 'Asesoría Jurídica' ? 'selected' : '' }} value="Asesoría Jurídica">Asesoría Jurídica</option>
+                                    <option {{ old('place_job') == 'Dirección de Administración y Finanzas' ? 'selected' : '' }} value="Dirección de Administración y Finanzas">Dirección de Administración y
                                         Finanzas</option>
-                                    <option value="Dirección de Control">Dirección de Control</option>
-                                    <option value="Dirección de Desarrollo Comunitario DIDECO">Dirección de Desarrollo
+                                    <option {{ old('place_job') == 'Dirección de Control' ? 'selected' : '' }} value="Dirección de Control">Dirección de Control</option>
+                                    <option {{ old('place_job') == 'Dirección de Desarrollo Comunitario DIDECO' ? 'selected' : '' }} value="Dirección de Desarrollo Comunitario DIDECO">Dirección de Desarrollo
                                         Comunitario DIDECO</option>
-                                    <option value="Dirección de Medio Ambiente Aseo y Ornato DIMAO">Dirección de Medio
+                                    <option {{ old('place_job') == 'Dirección de Medio Ambiente Aseo y Ornato DIMAO' ? 'selected' : '' }} value="Dirección de Medio Ambiente Aseo y Ornato DIMAO">Dirección de Medio
                                         Ambiente Aseo y Ornato DIMAO</option>
-                                    <option value="Dirección de Obras Municipales DOM">Dirección de Obras Municipales DOM
+                                    <option {{ old('place_job') == 'Dirección de Obras Municipales DOM' ? 'selected' : '' }} value="Dirección de Obras Municipales DOM">Dirección de Obras Municipales DOM
                                     </option>
-                                    <option value="Dirección de Operaciones">Dirección de Operaciones</option>
-                                    <option value="Dirección de Seguridad Pública">Dirección de Seguridad Pública</option>
-                                    <option value="Dirección de Servicios Traspasados">Dirección de Servicios Traspasados
+                                    <option {{ old('place_job') == 'Dirección de Operaciones' ? 'selected' : '' }} value="Dirección de Operaciones">Dirección de Operaciones</option>
+                                    <option {{ old('place_job') == 'Dirección de Seguridad Pública' ? 'selected' : '' }} value="Dirección de Seguridad Pública">Dirección de Seguridad Pública</option>
+                                    <option {{ old('place_job') == 'Dirección de Servicios Traspasados' ? 'selected' : '' }} value="Dirección de Servicios Traspasados">Dirección de Servicios Traspasados
                                     </option>
-                                    <option value="Dirección de Tránsito">Dirección de Tránsito</option>
-                                    <option value="Dirección de Turismo">Dirección de Turismo</option>
-                                    <option value="Oficina Territorial Alerce">Oficina Territorial Alerce</option>
-                                    <option value="Oficina Territorial Mirasol">Oficina Territorial Mirasol</option>
-                                    <option value="Oficina Territorial Rural">Oficina Territorial Rural</option>
-                                    <option value="Oficina Territorial Ruta Tepual">Oficina Territorial Ruta Tepual
+                                    <option {{ old('place_job') == 'Dirección de Tránsito' ? 'selected' : '' }} value="Dirección de Tránsito">Dirección de Tránsito</option>
+                                    <option {{ old('place_job') == 'Dirección de Turismo' ? 'selected' : '' }} value="Dirección de Turismo">Dirección de Turismo</option>
+                                    <option {{ old('place_job') == 'Oficina Territorial Alerce' ? 'selected' : '' }} value="Oficina Territorial Alerce">Oficina Territorial Alerce</option>
+                                    <option {{ old('place_job') == 'Oficina Territorial Mirasol' ? 'selected' : '' }} value="Oficina Territorial Mirasol">Oficina Territorial Mirasol</option>
+                                    <option {{ old('place_job') == 'Oficina Territorial Rural' ? 'selected' : '' }} value="Oficina Territorial Rural">Oficina Territorial Rural</option>
+                                    <option {{ old('place_job') == 'Oficina Territorial Ruta Tepual' ? 'selected' : '' }} value="Oficina Territorial Ruta Tepual">Oficina Territorial Ruta Tepual
                                     </option>
-                                    <option value="Primer Juzgado">Primer Juzgado</option>
-                                    <option value="Secretaría Municipal">Secretaría Municipal</option>
-                                    <option value="Secretaría Cpmunal de Planificación SECPLAN">Secretaría Cpmunal de
+                                    <option {{ old('place_job') == 'Primer Juzgado' ? 'selected' : '' }} value="Primer Juzgado">Primer Juzgado</option>
+                                    <option {{ old('place_job') == 'Secretaría Municipal' ? 'selected' : '' }} value="Secretaría Municipal">Secretaría Municipal</option>
+                                    <option {{ old('place_job') == 'Secretaría Cpmunal de Planificación SECPLAN' ? 'selected' : '' }} value="Secretaría Cpmunal de Planificación SECPLAN">Secretaría Comunal de
                                         Planificación SECPLAN</option>
-                                    <option value="Segundo Juzgado">Segundo Juzgado</option>
-                                    <option value="Tercer Juzgado">Tercer Juzgado</option>
-                                    <option value="Otro">Otro</option>
+                                    <option {{ old('place_job') == 'Segundo Juzgado' ? 'selected' : '' }} value="Segundo Juzgado">Segundo Juzgado</option>
+                                    <option {{ old('place_job') == 'Tercer Juzgado' ? 'selected' : '' }} value="Tercer Juzgado">Tercer Juzgado</option>
+                                    <option {{ old('place_job') == 'Otro' ? 'selected' : '' }} value="Otro">Otro</option>
                                     @error('place_job')
                                      <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                                     @enderror
@@ -182,21 +182,21 @@
                             @enderror"
                                 id="a8" name="a8" value="{{ old('a8') }}">
                                 <option value="" selected="">Seleccione una opción</option>
-                                <option value="Asistencia - Reloj Control">Asistencia - Reloj Control</option>
-                                <option value="Capacitacion">Capacitacion</option>
-                                <option value="Contratación">Contratación</option>
-                                <option value="Horas Extras">Horas Extras</option>
-                                <option value="Jefe/a de Personal">Jefe/a de Personal</option>
-                                <option value="Licencias Médicas">Licencias Médicas</option>
-                                <option value="Remuneraciones">Remuneraciones</option>
-                                <option value="Retiro Cese de Funciones">Retiro Cese de Funciones</option>
-                                <option value="Subdirector/a de Personal">Subdirector/a de Personal</option>
-                                <option value="Vestuario">Vestuario</option>
-                                <option value="Viáticos">Viáticos</option>
-                                <option value="Departamento de Prevención de Riesgos">Departamento de Prevención de Riesgos
+                                <option {{ old('a8') == 'Asistencia - Reloj Control' ? 'selected' : '' }} value="Asistencia - Reloj Control">Asistencia - Reloj Control</option>
+                                <option {{ old('a8') == 'Capacitacion' ? 'selected' : '' }} value="Capacitacion">Capacitacion</option>
+                                <option {{ old('a8') == 'Contratación' ? 'selected' : '' }} value="Contratación">Contratación</option>
+                                <option {{ old('a8') == 'Horas Extras' ? 'selected' : '' }} value="Horas Extras">Horas Extras</option>
+                                <option {{ old('a8') == 'Jefe/a de Personal' ? 'selected' : '' }} value="Jefe/a de Personal">Jefe/a de Personal</option>
+                                <option {{ old('a8') == 'Licencias Médicas' ? 'selected' : '' }} value="Licencias Médicas">Licencias Médicas</option>
+                                <option {{ old('a8') == 'Remuneraciones' ? 'selected' : '' }} value="Remuneraciones">Remuneraciones</option>
+                                <option {{ old('a8') == 'Retiro Cese de Funciones' ? 'selected' : '' }} value="Retiro Cese de Funciones">Retiro Cese de Funciones</option>
+                                <option {{ old('a8') == 'Subdirector/a de Personal' ? 'selected' : '' }} value="Subdirector/a de Personal">Subdirector/a de Personal</option>
+                                <option {{ old('a8') == 'Vestuario' ? 'selected' : '' }} value="Vestuario">Vestuario</option>
+                                <option {{ old('a8') == 'Viáticos' ? 'selected' : '' }} value="Viáticos">Viáticos</option>
+                                <option {{ old('a8') == 'Departamento de Prevención de Riesgos' ? 'selected' : '' }} value="Departamento de Prevención de Riesgos">Departamento de Prevención de Riesgos
                                 </option>
-                                <option value="Departamento de Bienestar">Departamento de Bienestar</option>
-                                <option value="Otro">Otro</option>
+                                <option {{ old('a8') == 'Departamento de Bienestar' ? 'selected' : '' }} value="Departamento de Bienestar">Departamento de Bienestar</option>
+                                <option {{ old('a8') == 'Otro' ? 'selected' : '' }} value="Otro">Otro</option>
                                 @error('a8')
                                     <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                                 @enderror
@@ -208,7 +208,7 @@
                             <label for="a9" class="form-label">9. En relación con la pregunta anterior, podría
                                 indicarnos ¿qué trámite en especifico realizó?:</label>
                             <textarea class="form-control form-control-alt @error('a9') is-invalid @enderror"
-                            id="a9" name="a9" value="{{ old('a9') }}" style="height: 50px" placeholder="Escriba aquí"></textarea>
+                            id="a9" name="a9" value="{{ old('a9') }}" style="height: 50px" placeholder="Escriba aquí" maxlength="500"></textarea>
                             @error('a9')
                                 <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                             @enderror
@@ -258,7 +258,7 @@
                                         value="7" {{ old('a10') == '7' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="a10">7</label>
                                 </div>
-                                <label class="form-check-label" for="a10">Muy en desacuerdo </label>
+                                <label class="form-check-label" for="a10">Muy de acuerdo </label>
                             </div>
 
                             <BR>
@@ -308,7 +308,7 @@
                                         value="7" {{ old('a11') == '7' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="a11">7</label>
                                 </div>
-                                <label class="form-check-label" for="a11">Muy en desacuerdo </label>
+                                <label class="form-check-label" for="a11">Muy de acuerdo </label>
                             </div>
                             <BR>
                         </div>
@@ -357,7 +357,7 @@
                                         value="7" {{ old('a12') == '7' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="a12">7</label>
                                 </div>
-                                <label class="form-check-label" for="a12">Muy en desacuerdo </label>
+                                <label class="form-check-label" for="a12">Muy de acuerdo</label>
                             </div>
                             <BR>
                         </div>
@@ -406,7 +406,7 @@
                                         value="7" {{ old('a13') == '7' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="a13">7</label>
                                 </div>
-                                <label class="form-check-label" for="a13">Muy en desacuerdo </label>
+                                <label class="form-check-label" for="a13">Muy de acuerdo </label>
                             </div>
                             <BR>
                         </div>
@@ -511,70 +511,21 @@
 
                         <div class="col-mb-12">
                             <br>
-                            <label for="a16" class="form-label">16. El funcionario de Personal que me atendió, es
-                                confiable.
-                            </label>
-
-                            <div class="space-x-3 text-center">
-                                <br>
-                                <label class="form-check-label" for="a16">Muy en desacuerdo </label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a16') is-invalid @enderror" type="radio" id="a16" name="a16"
-                                        value="1" {{ old('a16') == '1' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a16">1</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a16') is-invalid @enderror" type="radio" id="b16" name="a16"
-                                        value="2" {{ old('a16') == '2' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a16">2</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a16') is-invalid @enderror" type="radio" id="c16" name="a16"
-                                        value="3" {{ old('a16') == '3' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a16">3</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a16') is-invalid @enderror" type="radio" id="d16" name="a16"
-                                        value="4" {{ old('a16') == '4' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a16">4</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a16') is-invalid @enderror" type="radio" id="e16" name="a16"
-                                        value="5" {{ old('a16') == '5' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a16">5</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a16') is-invalid @enderror" type="radio" id="f16" name="a16"
-                                        value="6" {{ old('a16') == '6' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a16">6</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a16') is-invalid @enderror" type="radio" id="g16" name="a16"
-                                        value="7" {{ old('a16') == '7' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a16">7</label>
-                                </div>
-                                <label class="form-check-label" for="a16">Muy de acuerdo </label>
-                            </div>
-                            <BR>
-                        </div>
-
-                        <div class="col-mb-12">
-                            <br>
-                            <label for="a17" class="form-label">17. Siente que sufrió algún tipo de discriminación de
+                            <label for="a16" class="form-label">16. Siente que sufrió algún tipo de discriminación de
                                 cualquier tipo. (Político, religioso, de genero, físico, etc.).
                             </label>
                             <div class="space-y-2">
                                 <br>
                                 <div class="form-check">
-                                    <input class="form-check-input @error('a17') is-invalid @enderror" type="radio" id="a17" name="a17"
-                                        value="SI" {{ old('a17') == 'SI' ? 'checked' : '' }}>
+                                    <input class="form-check-input @error('a16') is-invalid @enderror" type="radio" id="a16" name="a16"
+                                        value="SI" {{ old('a16') == 'SI' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="a17">SI</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input @error('a17') is-invalid @enderror" type="radio" id="b17" name="a17"
-                                        value="NO" {{ old('a17') == 'NO' ? 'checked' : '' }}>
+                                    <input class="form-check-input @error('a16') is-invalid @enderror" type="radio" id="b16" name="a16"
+                                        value="NO" {{ old('a16') == 'NO' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="a17">NO</label>
-                                    @error('a17')
+                                    @error('a16')
                                         <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -585,19 +536,67 @@
 
                         <div class="col-mb-12">
                             <br>
-                            <label for="a18" class="form-label">18. Si su respuesta anterior fue SI, indique por que
+                            <label for="a17" class="form-label">17. Si su respuesta anterior fue SI, indique por que
                                 motivo se sintió discriminado.
                             </label>
 
-                            <textarea class="form-control" id="a18" name="a18" style="height: 70px" placeholder="Escriba aquí"></textarea>
+                            <textarea class="form-control" id="a17" name="a17" style="height: 70px" maxlength="1000" placeholder="Escriba aquí"></textarea>
                             <BR>
                         </div>
 
 
                         <div class="mb-12">
                             <br>
-                            <label for="a19" class="form-label">19. El Área de Personal es confiable.</label>
+                            <label for="a18" class="form-label">18. El Área de Personal es confiable.</label>
 
+                            <div class="space-x-3 text-center">
+                                <br>
+                                <label class="form-check-label" for="a18">Muy en desacuerdo </label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input @error('a18') is-invalid @enderror" type="radio" id="a18" name="a18"
+                                        value="1" {{ old('a18') == '1' ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="a18">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input @error('a18') is-invalid @enderror" type="radio" id="b18" name="a18"
+                                        value="2" {{ old('a18') == '2' ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="a18">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input @error('a18') is-invalid @enderror" type="radio" id="c18" name="a18"
+                                        value="3" {{ old('a18') == '3' ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="a18">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input @error('a18') is-invalid @enderror" type="radio" id="d18" name="a18"
+                                        value="4" {{ old('a18') == '4' ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="a18">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input @error('a18') is-invalid @enderror" type="radio" id="e18" name="a18"
+                                        value="5" {{ old('a18') == '5' ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="a18">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input @error('a18') is-invalid @enderror" type="radio" id="f18" name="a18"
+                                        value="6" {{ old('a18') == '6' ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="a18">6</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input @error('a18') is-invalid @enderror" type="radio" id="g18" name="a18"
+                                        value="7" {{ old('a18') == '7' ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="a18">7</label>
+                                </div>
+                                <label class="form-check-label" for="a19">Muy de acuerdo</label>
+                            </div>
+                            <BR>
+
+
+                        </div>
+
+                        <div for="20" class="col-md-12">
+                            <br>
+                            <label for="a19" class="form-label">19. El Área de Personal es eficiente.</label>
                             <div class="space-x-3 text-center">
                                 <br>
                                 <label class="form-check-label" for="a19">Muy en desacuerdo </label>
@@ -640,12 +639,14 @@
                             </div>
                             <BR>
 
-
                         </div>
 
-                        <div for="20" class="col-md-12">
+
+                        <div class="col-mb-12">
                             <br>
-                            <label for="a20" class="form-label">20. El Área de Personal es eficiente.</label>
+                            <label for="a20" class="form-label">20. El Área de Personal es cercana.
+                            </label>
+
                             <div class="space-x-3 text-center">
                                 <br>
                                 <label class="form-check-label" for="a20">Muy en desacuerdo </label>
@@ -684,21 +685,20 @@
                                         value="7" {{ old('a20') == '7' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="a20">7</label>
                                 </div>
-                                <label class="form-check-label" for="a20">Muy de acuerdo</label>
+                                <label class="form-check-label" for="a20">Muy de acuerdo </label>
                             </div>
                             <BR>
-
                         </div>
-
 
                         <div class="col-mb-12">
                             <br>
-                            <label for="a21" class="form-label">21. El Área de Personal es cercana.
+                            <label for="a21" class="form-label">21. En relación a la solución de su trámite o
+                                gestión, ¿fué solucionado satisfactoriamente?.
                             </label>
 
                             <div class="space-x-3 text-center">
                                 <br>
-                                <label class="form-check-label" for="a21">Muy en desacuerdo </label>
+                                <label class="form-check-label" for="a21">Totalmente insatisfecho </label>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input @error('a21') is-invalid @enderror" type="radio" id="a21" name="a21"
                                         value="1" {{ old('a21') == '1' ? 'checked' : '' }}>
@@ -734,20 +734,21 @@
                                         value="7" {{ old('a21') == '7' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="a21">7</label>
                                 </div>
-                                <label class="form-check-label" for="a21">Muy de acuerdo </label>
+                                <label class="form-check-label" for="a21">Totalmente satisfecho </label>
                             </div>
                             <BR>
                         </div>
 
                         <div class="col-mb-12">
                             <br>
-                            <label for="a22" class="form-label">22. En relación a la solución de su trámite o
-                                gestión, ¿fué solucionado satisfactoriamente?.
+                            <label for="a22" class="form-label">22. En general, considerando todas las variables
+                                anteriores, y a todas las secciones y áreas en una escala de 1 a 7, cómo evaluaría la
+                                experiencia de su visita al área de personal a la cual se dirigió.
                             </label>
 
                             <div class="space-x-3 text-center">
                                 <br>
-                                <label class="form-check-label" for="a22">Totalmente insatisfecho </label>
+                                <label class="form-check-label" for="a22">Pésimo</label>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input @error('a22') is-invalid @enderror" type="radio" id="a22" name="a22"
                                         value="1" {{ old('a22') == '1' ? 'checked' : '' }}>
@@ -783,57 +784,7 @@
                                         value="7" {{ old('a22') == '7' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="a22">7</label>
                                 </div>
-                                <label class="form-check-label" for="a22">Totalmente satisfecho </label>
-                            </div>
-                            <BR>
-                        </div>
-
-                        <div class="col-mb-12">
-                            <br>
-                            <label for="a23" class="form-label">23. En general, considerando todas las variables
-                                anteriores, y a todas las secciones y áreas en una escala de 1 a 7, cómo evaluaría la
-                                experiencia de su visita al área de personal a la cual se dirigió.
-                            </label>
-
-                            <div class="space-x-3 text-center">
-                                <br>
-                                <label class="form-check-label" for="a23">Pésimo</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a23') is-invalid @enderror" type="radio" id="a23" name="a23"
-                                        value="1" {{ old('a23') == '1' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a23">1</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a23') is-invalid @enderror" type="radio" id="b23" name="a23"
-                                        value="2" {{ old('a23') == '2' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a23">2</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a23') is-invalid @enderror" type="radio" id="c23" name="a23"
-                                        value="3" {{ old('a23') == '3' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a23">3</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a23') is-invalid @enderror" type="radio" id="d23" name="a23"
-                                        value="4" {{ old('a23') == '4' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a23">4</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a23') is-invalid @enderror" type="radio" id="e23" name="a23"
-                                        value="5" {{ old('a23') == '5' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a23">5</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a23') is-invalid @enderror" type="radio" id="f23" name="a23"
-                                        value="6" {{ old('a23') == '6' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a23">6</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input @error('a23') is-invalid @enderror" type="radio" id="g23" name="a23"
-                                        value="7" {{ old('a23') == '7' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="a23">7</label>
-                                </div>
-                                <label class="form-check-label" for="a23">Excelente</label>
+                                <label class="form-check-label" for="a22">Excelente</label>
                             </div>
                             <BR>
                         </div>
@@ -841,10 +792,10 @@
 
                         <div class="col-md-12">
                             <br>
-                            <label for="a24" class="form-label">24. Por último, tiene algún comentario respecto a la
+                            <label for="a23" class="form-label">23. Por último, tiene algún comentario respecto a la
                                 última visita realizada al Departamento de Personal y/o a Subdirección de Personal, que nos
                                 ayude a mejorar.</label>
-                            <textarea class="form-control" id="a24" name="a24" style="height: 70px" placeholder="Escriba aquí"></textarea>
+                            <textarea class="form-control" id="a23" name="a23" style="height: 70px" placeholder="Escriba aquí" maxlength="1000"></textarea>
                         </div>
                         <div class="block-content block-content-full block-content-sm bg-body-light text-end">
                             <a type="button" class="btn btn-md btn-alt-secondary" href="{{ route('form.index') }}"><i

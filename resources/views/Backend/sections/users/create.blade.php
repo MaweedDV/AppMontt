@@ -78,7 +78,7 @@
                             id="department_id" name="department_id" value="{{ old('department_id') }}">
                             <option value="" selected>Seleccione una opción</option>
                             @foreach ($departments as $department)
-                                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                <option {{ old('department_id') == $department->id ? 'selected' : '' }} value="{{ $department->id }}">{{ $department->name }}</option>
                             @endforeach
                         </select>
                         @error('department_id')
@@ -91,7 +91,7 @@
                             id="id_places" name="id_places" value="{{ old('id_places') }}">
                             <option value="" selected>Seleccione una opción</option>
                             @foreach ($places as $place)
-                                <option value="{{ $place->id }}">{{ $place->description }}</option>
+                                <option {{ old('id_places') == $place->id ? 'selected' : '' }} value="{{ $place->id }}">{{ $place->description }}</option>
                             @endforeach
                         </select>
                         @error('id_places')

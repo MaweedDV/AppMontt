@@ -38,7 +38,7 @@ class StoreRequest extends FormRequest
             'years_antiquity' => ['required'],
             'place_job' => ['required'],
             'a8' => ['required'],
-            'a9' => ['required'],
+            'a9' => ['required', 'max:500'],
             'a10' => ['required'],
             'a11' => ['required'],
             'a12' => ['required'],
@@ -46,13 +46,13 @@ class StoreRequest extends FormRequest
             'a14' => ['required'],
             'a15' => ['required'],
             'a16' => ['required'],
-            'a17' => ['required'],
+            'a17' => ['max:1000'],
+            'a18' => ['required'],
             'a19' => ['required'],
             'a20' => ['required'],
             'a21' => ['required'],
             'a22' => ['required'],
-            'a23' => ['required'],
-            'a24' => ['max:1000'],//-> respuesta opcional
+            'a23' => ['max:1000'],//-> respuesta opcional
         ];
     }
 }

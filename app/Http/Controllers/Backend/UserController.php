@@ -33,7 +33,7 @@ class UserController extends Controller
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
             'rut' => $request->get('rut'),
-            'department' => $request->get('department'),
+            'department_id' => $request->get('department_id'),
             'email' => $request->get('email'),
             'role' => $request->get('role'),
             'id_places' => $request->get('id_places'),

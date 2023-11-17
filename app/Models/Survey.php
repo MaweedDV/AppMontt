@@ -50,9 +50,5 @@ class Survey extends Model
         'a22',
         'q23',
         'a23',
-        'q24',
-        'a24',
-        'q25',
-        'a25',
     ];
 }
