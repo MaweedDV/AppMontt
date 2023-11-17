@@ -40,6 +40,7 @@
         </footer>
     </div>
     @stack('scripts')
+    @yield('javascript1')
 </body>
 
 </html>

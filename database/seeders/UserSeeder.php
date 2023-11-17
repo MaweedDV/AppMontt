@@ -26,17 +26,6 @@ class UserSeeder extends Seeder
             'profile_photo_path' => $solved_path,
             'department_id' => 1,
             'role' => 'admin',
-            'password' => bcrypt('123456')
-        ]);
-
-        User::create([
-            'first_name' => 'Felipe',
-            'last_name' => 'Almonacid',
-            'email' => 'felipe@mail.cl',
-            'rut' => '19413477-0',
-            'profile_photo_path' => $solved_path,
-            'department_id' => 1,
-            'role' => 'admin',
             'password' => bcrypt('123456789')
         ]);
     }

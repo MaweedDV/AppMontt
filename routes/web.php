@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\FormRsfController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -48,10 +49,14 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
          Route::get('/', [SurveyController::class, 'index'])->name('surveys.index');
          Route::get('/create', [SurveyController::class, 'create'])->name('surveys.create');
          Route::post('/', [SurveyController::class, 'store'])->name('surveys.store');
-    //     Route::get('/{id}', [SurveyController::class, 'show'])->name('surveys.show');
+         Route::get('/{id}', [SurveyController::class, 'show'])->name('surveys.show');
     //     Route::get('/edit/{id}', [SurveyController::class, 'edit'])->name('surveys.edit');
     //     Route::put('/{id}', [SurveyController::class, 'update'])->name('surveys.update');
     //     Route::delete('/{id}', [SurveyController::class, 'destroy'])->name('surveys.destroy');
+    });
+
+    Route::group(['prefix' => 'dashboard_detail'], function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard_detail.index');
     });
 
     //FORM RSF

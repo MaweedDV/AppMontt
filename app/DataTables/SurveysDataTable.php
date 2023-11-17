@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\form_rsf;
+use App\Models\Survey;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -12,7 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class FormRsfDataTable extends DataTable
+class SurveysDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
@@ -24,8 +24,7 @@ class FormRsfDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->setRowId('id')
             ->addColumn('action', '<div>
-            <a href="{{ route(\'rsf.show\', $id) }}" class="btn btn-sm btn-alt-secondary" title="Ver"><i class="fa fa-eye"></i></a>
-            <a href="{{ route(\'users.edit\', $id) }}" class="btn btn-sm btn-alt-primary" title="Editar"><i class="fa fa-edit"></i></a>
+            <a href="{{ route(\'surveys.show\', $id) }}" class="btn btn-sm btn-alt-secondary" title="Ver"><i class="fa fa-eye"></i></a>
             <form action="{{ route(\'form_rsf.destroy\', $id) }}" method="POST" style="display: inline-block;">
                 @csrf
                 @method(\'DELETE\')
@@ -57,12 +56,13 @@ class FormRsfDataTable extends DataTable
             </script>
 
             </div>');
+
     }
 
     /**
      * Get the query source of dataTable.
      */
-    public function query(form_rsf $model): QueryBuilder
+    public function query(Survey $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -73,7 +73,7 @@ class FormRsfDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('formrsf-table')
+                    ->setTableId('surveys-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->language('//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json')
@@ -96,23 +96,20 @@ class FormRsfDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+
             Column::make('id')->title('#')->width(50),
-            Column::make('name')->title('Nombre Completo'),
-            Column::make('date_attention')->title('Fecha atención'),
-            Column::make('hour_attention')->title('Hora Atención'),
-            Column::make('email')->title('Correo Electrónico'),
-            // Column::make('phone')->title('Teléfono'),
-            // Column::make('address')->title('Dirección'),
-            Column::make('place_job')->title('Lugar de Trabajo'),
-            Column::make('type_procedure')->title('Tipo Observación'),
-            Column::make('area_attention')->title('Area Atención'),
-            Column::make('subject')->title('Asunto'),
+            Column::make('name_survey')->title('Nombre Encuesta'),
+            Column::make('date_attention')->title('Fecha de Atención'),
+            Column::make('a8')->title('Área evaluada'),
+            Column::make('a9')->title('Motivo'),
+            Column::make('escale')->title('Escalafón'),
+            Column::make('juridic_quality')->title('Calidad Jurídica'),
             Column::computed('action')
-                  ->title('')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(150)
-                  ->addClass('text-center'),
+                ->title('')
+                ->exportable(false)
+                ->printable(false)
+                ->width(150)
+                ->addClass('text-center'),
         ];
     }
 
@@ -121,6 +118,6 @@ class FormRsfDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'FormRsf_' . date('YmdHis');
+        return 'Surveys_' . date('YmdHis');
     }
 }

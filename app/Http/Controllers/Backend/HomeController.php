@@ -20,9 +20,13 @@ class HomeController extends Controller
         $surveys_count = Survey::count();
         $frs_count = form_rsf::count();
         $users_count = User::count();
-        $satisfaccion_min = Survey::where('a24', '<=', '3' )->count();
-        $satisfaccion_med = Survey::where('a24', '>', '3' )->where('a24',  '<=', '5')->count();
-        $satisfaccion_max = Survey::where('a24', '>', '5' )->count();
+        $satisfaccion_min = Survey::where('a22', '<=', '3' )->count();
+        $satisfaccion_med = Survey::where('a22', '>', '3' )->where('a22',  '<=', '5')->count();
+        $satisfaccion_max = Survey::where('a22', '>', '5' )->count();
+
+        $promedio_encuestas = Survey::select('a22')->get()->sum('a22') / Survey::count();
+
+
         //porcentuales
         $sugerencias_porcent = ($sugerencias_count) ? ($sugerencias_count / $frs_count * 100) : 0;
         $reclamos_porcent = ($reclamos_count) ? ($reclamos_count / $frs_count * 100) : 0;
@@ -31,9 +35,19 @@ class HomeController extends Controller
         $satisfaccion_med_porcent = ($satisfaccion_med) ? ($satisfaccion_med / $surveys_count * 100) : 0;
         $satisfaccion_max_porcent = ($satisfaccion_max) ? ($satisfaccion_max / $surveys_count * 100) : 0;
 
+        if ($promedio_encuestas <= 3.9) {
+            $colorBox = "bg-danger";
+        }elseif ($promedio_encuestas > 4 and $promedio_encuestas <= 5.9) {
+            $colorBox = "bg-warning";
+        }elseif ($promedio_encuestas >= 6) {
+            $colorBox = "bg-success";
+        };
+        //cambio de color para cuadro según muestra de promedio
+        // $color = "bg-danger";
+
         return view('dashboard', compact('surveys_count', 'sugerencias_count', 'frs_count', 'reclamos_count', 'felicitaciones_count', 'users_count',
                                          'sugerencias_porcent', 'reclamos_porcent', 'felicitaciones_porcent', 'satisfaccion_min_porcent',
-                                         'satisfaccion_med_porcent','satisfaccion_max_porcent'),['MantainersCountChart' => $MantainersCountChart->build(), 'FormRsfChart' => $FormRsfChart->build()]);
+                                         'satisfaccion_med_porcent','satisfaccion_max_porcent', 'promedio_encuestas','colorBox'),['MantainersCountChart' => $MantainersCountChart->build(), 'FormRsfChart' => $FormRsfChart->build()]);
     }
 
     public function profile()

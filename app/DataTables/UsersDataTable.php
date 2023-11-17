@@ -2,6 +2,7 @@
 
 namespace App\DataTables;
 
+use App\Models\Place;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
@@ -93,6 +94,8 @@ class UsersDataTable extends DataTable
      */
     public function getColumns(): array
     {
+
+
         return [
 
             Column::make('id')->title('#')->width(100),

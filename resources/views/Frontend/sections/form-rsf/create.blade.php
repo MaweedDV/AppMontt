@@ -104,7 +104,7 @@
                                 id="place_job" name="place_job" value="{{ old('place_job') }}">
                                 <option selected="">Seleccione una opción</option>
                                 @foreach ($places as $place)
-                                    <option value="{{ $place->description }}">{{ $place->description }}</option>
+                                    <option {{ old('place_job') == $place->description ? 'selected' : '' }} value="{{ $place->description }}">{{ $place->description }}</option>
                                 @endforeach
                             </select>
                             @error('place_job')
@@ -118,9 +118,9 @@
                   @enderror"
                                 id="type_procedure" name="type_procedure" value="{{ old('type_procedure') }}">
                                 <option selected="">Seleccione una opción</option>
-                                <option value="Reclamo">Reclamo</option>
-                                <option value="Sugerencia">Sugerencia</option>
-                                <option value="Felicitacion">Felicitacion</option>
+                                <option {{ old('type_procedure') == 'Reclamo' ? 'selected' : '' }} value="Reclamo">Reclamo</option>
+                                <option {{ old('type_procedure') == 'Sugerencia' ? 'selected' : '' }} value="Sugerencia">Sugerencia</option>
+                                <option {{ old('type_procedure') == 'Felicitacion' ? 'selected' : '' }} value="Felicitacion">Felicitacion</option>
                             </select>
                             @error('type_procedure')
                                 <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
@@ -133,17 +133,17 @@
                   @enderror"
                                 id="area_attention" name="area_attention" value="{{ old('area_attention') }}">
                                 <option selected="">Seleccione una opción</option>
-                                <option value="Asistencia - Reloj Control">Asistencia - Reloj Control</option>
-                                <option value="Capacitacion">Capacitacion</option>
-                                <option value="Contratacion">Contratacion</option>
-                                <option value="Horas Extras">Horas Extras</option>
-                                <option value="Jefa/e de Personal">Jefa/e de Personal</option>
-                                <option value="Licencias Medicas">Licencias Medicas</option>
-                                <option value="Remuneraciones">Remuneraciones</option>
-                                <option value="Retiro Cese de Funciones">Retiro Cese de Funciones</option>
-                                <option value="Subdirector/a de Personal">Subdirector/a de Personal</option>
-                                <option value="Vestuario">Vestuario</option>
-                                <option value="Viaticos">Viaticos</option>
+                                <option {{ old('area_attention') == 'Asistencia - Reloj Control' ? 'selected' : '' }} value="Asistencia - Reloj Control">Asistencia - Reloj Control</option>
+                                <option {{ old('area_attention') == 'Capacitacion' ? 'selected' : '' }} value="Capacitacion">Capacitacion</option>
+                                <option {{ old('area_attention') == 'Contratacion' ? 'selected' : '' }} value="Contratacion">Contratacion</option>
+                                <option {{ old('area_attention') == 'Horas Extras' ? 'selected' : '' }} value="Horas Extras">Horas Extras</option>
+                                <option {{ old('area_attention') == 'Jefa/e de Personal' ? 'selected' : '' }} value="Jefa/e de Personal">Jefa/e de Personal</option>
+                                <option {{ old('area_attention') == 'Licencias Medicas' ? 'selected' : '' }} value="Licencias Medicas">Licencias Medicas</option>
+                                <option {{ old('area_attention') == 'Remuneraciones' ? 'selected' : '' }} value="Remuneraciones">Remuneraciones</option>
+                                <option {{ old('area_attention') == 'Retiro Cese de Funciones' ? 'selected' : '' }} value="Retiro Cese de Funciones">Retiro Cese de Funciones</option>
+                                <option {{ old('area_attention') == 'Subdirector/a de Personal' ? 'selected' : '' }} value="Subdirector/a de Personal">Subdirector/a de Personal</option>
+                                <option {{ old('area_attention') == 'Vestuario' ? 'selected' : '' }} value="Vestuario">Vestuario</option>
+                                <option {{ old('area_attention') == 'Viaticos' ? 'selected' : '' }} value="Viaticos">Viaticos</option>
                             </select>
                             @error('area_attention')
                                 <div class="invalid-feedback animated fadeIn">{{ $message }}</div>

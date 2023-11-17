@@ -87,11 +87,11 @@
                 </div>
               <div class="col-md-4">
                 <label for="lblPlace" class="form-label">Dirección o Unidad en que Trabaja:</label>
-                <select class="form-control form-control-alt  @error('place_job') is-invalid
-                @enderror" id="place_job" name="place_job" value="{{ old('place_job') }}">
-                  <option selected="">Seleccione una opción</option>
+                <select class="form-control form-control-alt  @error('place_job') is-invalid @enderror"
+                 id="place_job" name="place_job" value="{{ old('place_job') }}">
+                  <option value="" selected>Seleccione una opción</option>
                 @foreach ($places as $place)
-                    <option value="{{$place->description}}">{{$place->description}}</option>
+                    <option {{ old('place_job') == $place->description ? 'selected' : '' }} value="{{$place->description}}">{{$place->description}}</option>
                 @endforeach
                 </select>
                 @error('place_job')
@@ -135,7 +135,7 @@
                   <div class="content py-6">
                       <label class="form-label" for="example-textarea-input-alt">Observación:</label>
                       <textarea class="form-control form-control-alt @error('observation') is-invalid
-                    @enderror" id="observation" name="observation" style="height: 100px" maxlength="5" value="{{ old('observation') }}" placeholder="Escriba aquí"></textarea>
+                    @enderror" id="observation" name="observation" style="height: 100px" maxlength="500" value="{{ old('observation') }}" placeholder="Escriba aquí"></textarea>
                     @error('observation')
                       <div class="invalid-feedback animated fadeIn">{{ $message }}</div>
                     @enderror

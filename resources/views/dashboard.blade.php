@@ -89,7 +89,7 @@
             </div>
             <h3>Reclamos, Sugerencias y Felicitaciones</h3>
             <div class="col-md-6 col-xl-4">
-                <a class="block block-rounded block-link-shadow bg-success" href="javascript:void(0)">
+                <a class="block block-rounded block-link-shadow bg-success" href="">
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
@@ -109,7 +109,7 @@
                 </a>
             </div>
             <div class="col-md-6 col-xl-4">
-                <a class="block block-rounded block-link-shadow bg-warning" href="javascript:void(0)">
+                <a class="block block-rounded block-link-shadow bg-warning" href="">
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
@@ -129,7 +129,7 @@
                 </a>
             </div>
             <div class="col-md-6 col-xl-4">
-                <a class="block block-rounded block-link-shadow bg-danger" href="javascript:void(0)">
+                <a class="block block-rounded block-link-shadow bg-danger" href="">
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="me-3">
                             <p class="text-white fs-3 fw-medium mb-0">
